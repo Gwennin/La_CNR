@@ -39,6 +39,8 @@
 		5D5D3AD515507D6B001E3E5D /* twitter-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AD315507D6B001E3E5D /* twitter-logo.jpg */; };
 		5D5D3AD8155084F7001E3E5D /* BGTabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AD6155084F7001E3E5D /* BGTabBar.png */; };
 		5D5D3AD9155084F7001E3E5D /* BGTabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AD7155084F7001E3E5D /* BGTabBar@2x.png */; };
+		7A7033091550803C00804C31 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7033061550803C00804C31 /* Event.m */; };
+		7A70330A1550803C00804C31 /* EventRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7033081550803C00804C31 /* EventRepository.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +89,10 @@
 		5D5D3AD315507D6B001E3E5D /* twitter-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "twitter-logo.jpg"; path = "../../imgs/twitter-logo.jpg"; sourceTree = "<group>"; };
 		5D5D3AD6155084F7001E3E5D /* BGTabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BGTabBar.png; path = ../../imgs/BGTabBar.png; sourceTree = "<group>"; };
 		5D5D3AD7155084F7001E3E5D /* BGTabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BGTabBar@2x.png"; path = "../../imgs/BGTabBar@2x.png"; sourceTree = "<group>"; };
+		7A7033051550803C00804C31 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		7A7033061550803C00804C31 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		7A7033071550803C00804C31 /* EventRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventRepository.h; sourceTree = "<group>"; };
+		7A7033081550803C00804C31 /* EventRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventRepository.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,7 @@
 		5D5D3A2F15500098001E3E5D /* CNR */ = {
 			isa = PBXGroup;
 			children = (
+				7A7033031550801100804C31 /* Models */,
 				5D5D3A3815500098001E3E5D /* AppDelegate.h */,
 				5D5D3A3915500098001E3E5D /* AppDelegate.m */,
 				5D5D3A741550096E001E3E5D /* Classes */,
@@ -227,6 +234,17 @@
 			name = Testing;
 			sourceTree = "<group>";
 		};
+		7A7033031550801100804C31 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7A7033051550803C00804C31 /* Event.h */,
+				7A7033061550803C00804C31 /* Event.m */,
+				7A7033071550803C00804C31 /* EventRepository.h */,
+				7A7033081550803C00804C31 /* EventRepository.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -318,6 +336,8 @@
 				5D5D3A9E15502D2B001E3E5D /* ActualiteViewController.m in Sources */,
 				5D5D3AB1155050F8001E3E5D /* ProgramationViewController.m in Sources */,
 				5D5D3ACD15506FC1001E3E5D /* PresentationViewController.m in Sources */,
+				7A7033091550803C00804C31 /* Event.m in Sources */,
+				7A70330A1550803C00804C31 /* EventRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
