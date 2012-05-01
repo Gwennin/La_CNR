@@ -24,6 +24,21 @@
     return self;
 }
 
+static EventRepository* __sharedEventRepository = nil;
+
++ (EventRepository *) sharedEventRepository
+{
+    @synchronized([EventRepository class])
+    {
+        if(!__sharedEventRepository)
+            __sharedEventRepository =[[self alloc] init];
+        
+        return __sharedEventRepository;
+    }
+    
+    return nil;
+}
+
 - (id)parseXMLAtURL:(NSURL *)url
 {
     events = [[NSMutableArray alloc] init];

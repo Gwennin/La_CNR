@@ -21,6 +21,7 @@
 		
 		self.title = @"Accueil";
 		self.tabBarItem.image = [UIImage imageNamed:@"HomeButton.png"];
+        er = [EventRepository sharedEventRepository];
     }
     return self;
 }
@@ -40,11 +41,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FastView"];
-	
-	cell.textLabel.text = [NSString stringWithFormat:@"Prochaisn évènements %i", indexPath.row];
+    Event* e = [[er events] objectAtIndex:[indexPath row]];
+	cell.textLabel.text = [NSString stringWithFormat:@"%@", [e title]];
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
 	return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

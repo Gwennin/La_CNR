@@ -13,14 +13,18 @@
 #import "ActualiteViewController.h"
 #import "ProgramationViewController.h"
 #import "PresentationViewController.h"
+#import "EventRepository.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize mainController = _mainController;
+@synthesize er;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    er = [EventRepository sharedEventRepository];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
 	UIViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];

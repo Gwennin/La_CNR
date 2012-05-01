@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EventRepository.h"
 
 @interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    EventRepository* er;
+}
 
 -(IBAction)goToTwitter:(id)sender;
 -(IBAction)goToFacebook:(id)sender;

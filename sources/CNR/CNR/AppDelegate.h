@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EventRepository.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    EventRepository* er;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) UIViewController *mainController;
+
+@property (nonatomic, readonly) EventRepository* er;
 
 @end

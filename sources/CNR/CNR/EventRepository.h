@@ -17,10 +17,8 @@
     Event* event;
 }
 
-- (id) init;
-
 @property (nonatomic) NSMutableArray* events;
 
-- (id) parseXMLAtURL:(NSURL *) url;
++ (EventRepository*) sharedEventRepository;
 
 @end
