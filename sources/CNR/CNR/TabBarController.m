@@ -21,7 +21,7 @@
 	CGRect frame = CGRectMake(0.0, 0.0, self.view.bounds.size.width, 48);
     UIView *v = [[UIView alloc] initWithFrame:frame];
     [v setBackgroundColor:[UIColor yellowColor]];
-    [v setAlpha:0.5];
+    [v setAlpha:0.75];
     [[self tabBar] addSubview:v];
 }
 
@@ -33,7 +33,20 @@
 	for (UIViewController* vc in viewControllers) {
 		
 		UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:vc];
-		navController.navigationBar.tintColor = [UIColor yellowColor];
+		
+		UILabel* titleLabel = [[UILabel alloc] init];
+		titleLabel.text = vc.title;
+		titleLabel.textColor = [UIColor blackColor];
+		titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
+		titleLabel.backgroundColor = [UIColor clearColor];
+		titleLabel.textAlignment = UITextAlignmentCenter;
+		
+		navController.navigationBar.topItem.titleView = titleLabel;
+		
+		[titleLabel sizeToFit];
+		
+		navController.navigationBar.tintColor = [UIColor colorWithRed:200.0/255.0f green:200.0/255.0f blue:0 alpha:1.0];
+		
 		[viewControllersWithNavigationBar addObject:navController];
 	}
 	

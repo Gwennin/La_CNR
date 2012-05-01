@@ -27,6 +27,13 @@
 		5D5D3A86155015AE001E3E5D /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A84155015AE001E3E5D /* ThirdViewController.xib */; };
 		5D5D3A8A155015C3001E3E5D /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D3A88155015C3001E3E5D /* FourthViewController.m */; };
 		5D5D3A8B155015C3001E3E5D /* FourthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A89155015C3001E3E5D /* FourthViewController.xib */; };
+		5D5D3A9015501CFC001E3E5D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D3A8E15501CFC001E3E5D /* HomeViewController.m */; };
+		5D5D3A9115501CFC001E3E5D /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A8F15501CFC001E3E5D /* HomeViewController.xib */; };
+		5D5D3A9515501D53001E3E5D /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A9215501D53001E3E5D /* home.png */; };
+		5D5D3A9615501D53001E3E5D /* programmation.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A9315501D53001E3E5D /* programmation.png */; };
+		5D5D3A9715501D53001E3E5D /* RSS.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A9415501D53001E3E5D /* RSS.png */; };
+		5D5D3A9915501DB5001E3E5D /* LaCNR.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A9815501DB5001E3E5D /* LaCNR.png */; };
+		5D5D3A9B1550252E001E3E5D /* HomeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A9A1550252E001E3E5D /* HomeButton@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +66,14 @@
 		5D5D3A87155015C3001E3E5D /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		5D5D3A88155015C3001E3E5D /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 		5D5D3A89155015C3001E3E5D /* FourthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourthViewController.xib; sourceTree = "<group>"; };
+		5D5D3A8D15501CFC001E3E5D /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		5D5D3A8E15501CFC001E3E5D /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		5D5D3A8F15501CFC001E3E5D /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		5D5D3A9215501D53001E3E5D /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = ../../imgs/home.png; sourceTree = "<group>"; };
+		5D5D3A9315501D53001E3E5D /* programmation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = programmation.png; path = ../../imgs/programmation.png; sourceTree = "<group>"; };
+		5D5D3A9415501D53001E3E5D /* RSS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RSS.png; path = ../../imgs/RSS.png; sourceTree = "<group>"; };
+		5D5D3A9815501DB5001E3E5D /* LaCNR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LaCNR.png; path = ../../imgs/LaCNR.png; sourceTree = "<group>"; };
+		5D5D3A9A1550252E001E3E5D /* HomeButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "HomeButton@2x.png"; path = "../../imgs/HomeButton@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +146,11 @@
 			isa = PBXGroup;
 			children = (
 				5D5D3A711550078F001E3E5D /* HomeButton.png */,
+				5D5D3A9A1550252E001E3E5D /* HomeButton@2x.png */,
+				5D5D3A9815501DB5001E3E5D /* LaCNR.png */,
+				5D5D3A9215501D53001E3E5D /* home.png */,
+				5D5D3A9315501D53001E3E5D /* programmation.png */,
+				5D5D3A9415501D53001E3E5D /* RSS.png */,
 				5D5D3A3E15500098001E3E5D /* first.png */,
 				5D5D3A4015500098001E3E5D /* first@2x.png */,
 				5D5D3A4515500098001E3E5D /* second.png */,
@@ -150,6 +170,26 @@
 		5D5D3A7515500979001E3E5D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5D5D3A8C15501CE4001E3E5D /* Testing */,
+				5D5D3A8D15501CFC001E3E5D /* HomeViewController.h */,
+				5D5D3A8E15501CFC001E3E5D /* HomeViewController.m */,
+				5D5D3A8F15501CFC001E3E5D /* HomeViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5D5D3A76155009A2001E3E5D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5D5D3A7A15500B10001E3E5D /* TabBarController.h */,
+				5D5D3A7B15500B10001E3E5D /* TabBarController.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		5D5D3A8C15501CE4001E3E5D /* Testing */ = {
+			isa = PBXGroup;
+			children = (
 				5D5D3A6215500183001E3E5D /* SecondViewController.xib */,
 				5D5D3A4215500098001E3E5D /* SecondViewController.h */,
 				5D5D3A4315500098001E3E5D /* SecondViewController.m */,
@@ -163,16 +203,7 @@
 				5D5D3A88155015C3001E3E5D /* FourthViewController.m */,
 				5D5D3A89155015C3001E3E5D /* FourthViewController.xib */,
 			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		5D5D3A76155009A2001E3E5D /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				5D5D3A7A15500B10001E3E5D /* TabBarController.h */,
-				5D5D3A7B15500B10001E3E5D /* TabBarController.m */,
-			);
-			name = Helpers;
+			name = Testing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +268,12 @@
 				5D5D3A81155014B0001E3E5D /* FirstViewController.xib in Resources */,
 				5D5D3A86155015AE001E3E5D /* ThirdViewController.xib in Resources */,
 				5D5D3A8B155015C3001E3E5D /* FourthViewController.xib in Resources */,
+				5D5D3A9115501CFC001E3E5D /* HomeViewController.xib in Resources */,
+				5D5D3A9515501D53001E3E5D /* home.png in Resources */,
+				5D5D3A9615501D53001E3E5D /* programmation.png in Resources */,
+				5D5D3A9715501D53001E3E5D /* RSS.png in Resources */,
+				5D5D3A9915501DB5001E3E5D /* LaCNR.png in Resources */,
+				5D5D3A9B1550252E001E3E5D /* HomeButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +291,7 @@
 				5D5D3A7F15501499001E3E5D /* FirstViewController.m in Sources */,
 				5D5D3A85155015AE001E3E5D /* ThirdViewController.m in Sources */,
 				5D5D3A8A155015C3001E3E5D /* FourthViewController.m in Sources */,
+				5D5D3A9015501CFC001E3E5D /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

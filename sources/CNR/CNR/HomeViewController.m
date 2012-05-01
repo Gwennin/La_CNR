@@ -18,6 +18,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+		
+		self.title = @"Acceuil";
+		self.tabBarItem.image = [UIImage imageNamed:@"HomeButton.png"];
         // Custom initialization
     }
     return self;
