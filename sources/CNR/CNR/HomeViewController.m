@@ -21,22 +21,25 @@
 		
 		self.title = @"Acceuil";
 		self.tabBarItem.image = [UIImage imageNamed:@"HomeButton.png"];
-        // Custom initialization
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	return @"Prochain évènements";
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FastView"];
+	
+	cell.textLabel.text = [NSString stringWithFormat:@"Prochain évènement %i", indexPath.row];
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	
+	return cell;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

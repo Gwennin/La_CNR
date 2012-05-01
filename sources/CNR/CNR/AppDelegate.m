@@ -10,8 +10,8 @@
 
 #import "TabBarController.h"
 #import "HomeViewController.h"
+#import "ActualiteViewController.h"
 
-#import "FirstViewController.h"
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
 #import "FourthViewController.h"
@@ -26,13 +26,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
 	UIViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
-	UIViewController *viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
+	UIViewController *actualiteViewController = [[ActualiteViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	UIViewController *viewController3 = [[ThirdViewController alloc] initWithNibName:@"ThirdViewController" bundle:nil];
 	UIViewController *viewController4 = [[FourthViewController alloc] initWithNibName:@"FourthViewController" bundle:nil];
 	
 	self.mainController = [[TabBarController alloc] init];
 	
-	[(TabBarController*)self.mainController setViewControllers:[NSArray arrayWithObjects:homeViewController, viewController2, viewController3, viewController4, nil]];
+	[(TabBarController*)self.mainController setViewControllers:[NSArray arrayWithObjects:homeViewController, actualiteViewController, viewController3, viewController4, nil]];
 	
 	self.window.rootViewController = self.mainController;
     [self.window makeKeyAndVisible];
