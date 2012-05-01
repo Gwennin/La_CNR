@@ -8,24 +8,31 @@
 
 #import "AppDelegate.h"
 
-#import "FirstViewController.h"
-
-#import "SecondViewController.h"
+#import "TabBarController.h"
+#import "HomeViewController.h"
+#import "ActualiteViewController.h"
+#import "ProgramationViewController.h"
+#import "PresentationViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize tabBarController = _tabBarController;
+@synthesize mainController = _mainController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-	UIViewController *viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
-	UIViewController *viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
-	self.tabBarController = [[UITabBarController alloc] init];
-	self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
-	self.window.rootViewController = self.tabBarController;
+
+	UIViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+	UIViewController *actualiteViewController = [[ActualiteViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	UIViewController *programationViewController = [[ProgramationViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	UIViewController *presentationViewController = [[PresentationViewController alloc] init];
+	
+	self.mainController = [[TabBarController alloc] init];
+	
+	[(TabBarController*)self.mainController setViewControllers:[NSArray arrayWithObjects:homeViewController, actualiteViewController, programationViewController, presentationViewController, nil]];
+	
+	self.window.rootViewController = self.mainController;
     [self.window makeKeyAndVisible];
     return YES;
 }
