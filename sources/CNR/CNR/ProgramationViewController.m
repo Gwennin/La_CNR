@@ -1,26 +1,26 @@
 //
-//  ActualiteViewController.m
+//  ProgramationViewController.m
 //  CNR
 //
 //  Created by Gwennin Le Bourdonnec on 01/05/12.
 //  Copyright (c) 2012 Supinfo. All rights reserved.
 //
 
-#import "ActualiteViewController.h"
+#import "ProgramationViewController.h"
 
-@interface ActualiteViewController ()
+@interface ProgramationViewController ()
 
 @end
 
-@implementation ActualiteViewController
+@implementation ProgramationViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
 		
-		self.title = @"Actualités";
-		self.tabBarItem.image = [UIImage imageNamed:@"RSS.png"];
+		self.title = @"Programation";
+		self.tabBarItem.image = [UIImage imageNamed:@"programation2.png"];
 		self.view.backgroundColor = [UIColor whiteColor];
 	}
     return self;
@@ -49,15 +49,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ActuCell";
+    static NSString *CellIdentifier = @"PrograCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (!cell) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
     
-	cell.textLabel.text = [NSString stringWithFormat:@"Actualité n°%i", indexPath.row + (indexPath.section * 2) + 1];
-	cell.imageView.image = [UIImage imageNamed:@"second.png"];
+	cell.textLabel.text = [NSString stringWithFormat:@"Programation n°%i", indexPath.row + (indexPath.section * 2) + 1];
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
     return cell;

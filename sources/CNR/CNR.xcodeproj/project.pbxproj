@@ -31,6 +31,14 @@
 		5D5D3A9B1550252E001E3E5D /* HomeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A9A1550252E001E3E5D /* HomeButton@2x.png */; };
 		5D5D3A9E15502D2B001E3E5D /* ActualiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D3A9D15502D2B001E3E5D /* ActualiteViewController.m */; };
 		5D5D3AA015502E17001E3E5D /* RSS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A9F15502E17001E3E5D /* RSS@2x.png */; };
+		5D5D3AB1155050F8001E3E5D /* ProgramationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D3AB0155050F8001E3E5D /* ProgramationViewController.m */; };
+		5D5D3AC015506C7C001E3E5D /* programation2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3ABC15506C7C001E3E5D /* programation2@2x.png */; };
+		5D5D3AC115506C7C001E3E5D /* programation3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3ABD15506C7C001E3E5D /* programation3@2x.png */; };
+		5D5D3AC815506CA9001E3E5D /* programation2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AC415506CA9001E3E5D /* programation2.png */; };
+		5D5D3AC915506CA9001E3E5D /* programation3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AC515506CA9001E3E5D /* programation3.png */; };
+		5D5D3ACD15506FC1001E3E5D /* PresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D3ACC15506FC0001E3E5D /* PresentationViewController.m */; };
+		5D5D3AD01550723C001E3E5D /* Presentation.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3ACE1550723C001E3E5D /* Presentation.png */; };
+		5D5D3AD11550723C001E3E5D /* Presentation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3ACF1550723C001E3E5D /* Presentation@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +77,16 @@
 		5D5D3A9C15502D2A001E3E5D /* ActualiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActualiteViewController.h; sourceTree = "<group>"; };
 		5D5D3A9D15502D2B001E3E5D /* ActualiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActualiteViewController.m; sourceTree = "<group>"; };
 		5D5D3A9F15502E17001E3E5D /* RSS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RSS@2x.png"; path = "../../imgs/RSS@2x.png"; sourceTree = "<group>"; };
+		5D5D3AAF155050F8001E3E5D /* ProgramationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramationViewController.h; sourceTree = "<group>"; };
+		5D5D3AB0155050F8001E3E5D /* ProgramationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramationViewController.m; sourceTree = "<group>"; };
+		5D5D3ABC15506C7C001E3E5D /* programation2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "programation2@2x.png"; sourceTree = "<group>"; };
+		5D5D3ABD15506C7C001E3E5D /* programation3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "programation3@2x.png"; sourceTree = "<group>"; };
+		5D5D3AC415506CA9001E3E5D /* programation2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = programation2.png; path = ../../imgs/programation2.png; sourceTree = "<group>"; };
+		5D5D3AC515506CA9001E3E5D /* programation3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = programation3.png; path = ../../imgs/programation3.png; sourceTree = "<group>"; };
+		5D5D3ACB15506FC0001E3E5D /* PresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationViewController.h; sourceTree = "<group>"; };
+		5D5D3ACC15506FC0001E3E5D /* PresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationViewController.m; sourceTree = "<group>"; };
+		5D5D3ACE1550723C001E3E5D /* Presentation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Presentation.png; path = ../../imgs/Presentation.png; sourceTree = "<group>"; };
+		5D5D3ACF1550723C001E3E5D /* Presentation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Presentation@2x.png"; path = "../../imgs/Presentation@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +158,12 @@
 		5D5D3A7315500944001E3E5D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5D5D3ACE1550723C001E3E5D /* Presentation.png */,
+				5D5D3ACF1550723C001E3E5D /* Presentation@2x.png */,
+				5D5D3AC415506CA9001E3E5D /* programation2.png */,
+				5D5D3AC515506CA9001E3E5D /* programation3.png */,
+				5D5D3ABC15506C7C001E3E5D /* programation2@2x.png */,
+				5D5D3ABD15506C7C001E3E5D /* programation3@2x.png */,
 				5D5D3A9415501D53001E3E5D /* RSS.png */,
 				5D5D3A9F15502E17001E3E5D /* RSS@2x.png */,
 				5D5D3A711550078F001E3E5D /* HomeButton.png */,
@@ -169,6 +193,10 @@
 				5D5D3A8F15501CFC001E3E5D /* HomeViewController.xib */,
 				5D5D3A9C15502D2A001E3E5D /* ActualiteViewController.h */,
 				5D5D3A9D15502D2B001E3E5D /* ActualiteViewController.m */,
+				5D5D3AAF155050F8001E3E5D /* ProgramationViewController.h */,
+				5D5D3AB0155050F8001E3E5D /* ProgramationViewController.m */,
+				5D5D3ACB15506FC0001E3E5D /* PresentationViewController.h */,
+				5D5D3ACC15506FC0001E3E5D /* PresentationViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -264,6 +292,12 @@
 				5D5D3A9915501DB5001E3E5D /* LaCNR.png in Resources */,
 				5D5D3A9B1550252E001E3E5D /* HomeButton@2x.png in Resources */,
 				5D5D3AA015502E17001E3E5D /* RSS@2x.png in Resources */,
+				5D5D3AC015506C7C001E3E5D /* programation2@2x.png in Resources */,
+				5D5D3AC115506C7C001E3E5D /* programation3@2x.png in Resources */,
+				5D5D3AC815506CA9001E3E5D /* programation2.png in Resources */,
+				5D5D3AC915506CA9001E3E5D /* programation3.png in Resources */,
+				5D5D3AD01550723C001E3E5D /* Presentation.png in Resources */,
+				5D5D3AD11550723C001E3E5D /* Presentation@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +316,8 @@
 				5D5D3A8A155015C3001E3E5D /* FourthViewController.m in Sources */,
 				5D5D3A9015501CFC001E3E5D /* HomeViewController.m in Sources */,
 				5D5D3A9E15502D2B001E3E5D /* ActualiteViewController.m in Sources */,
+				5D5D3AB1155050F8001E3E5D /* ProgramationViewController.m in Sources */,
+				5D5D3ACD15506FC1001E3E5D /* PresentationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

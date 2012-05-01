@@ -11,10 +11,8 @@
 #import "TabBarController.h"
 #import "HomeViewController.h"
 #import "ActualiteViewController.h"
-
-#import "SecondViewController.h"
-#import "ThirdViewController.h"
-#import "FourthViewController.h"
+#import "ProgramationViewController.h"
+#import "PresentationViewController.h"
 
 @implementation AppDelegate
 
@@ -27,12 +25,12 @@
 
 	UIViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
 	UIViewController *actualiteViewController = [[ActualiteViewController alloc] initWithStyle:UITableViewStyleGrouped];
-	UIViewController *viewController3 = [[ThirdViewController alloc] initWithNibName:@"ThirdViewController" bundle:nil];
-	UIViewController *viewController4 = [[FourthViewController alloc] initWithNibName:@"FourthViewController" bundle:nil];
+	UIViewController *programationViewController = [[ProgramationViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	UIViewController *presentationViewController = [[PresentationViewController alloc] init];
 	
 	self.mainController = [[TabBarController alloc] init];
 	
-	[(TabBarController*)self.mainController setViewControllers:[NSArray arrayWithObjects:homeViewController, actualiteViewController, viewController3, viewController4, nil]];
+	[(TabBarController*)self.mainController setViewControllers:[NSArray arrayWithObjects:homeViewController, actualiteViewController, programationViewController, presentationViewController, nil]];
 	
 	self.window.rootViewController = self.mainController;
     [self.window makeKeyAndVisible];
