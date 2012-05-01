@@ -13,8 +13,6 @@
 		5D5D3A3615500098001E3E5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D3A3515500098001E3E5D /* main.m */; };
 		5D5D3A3A15500098001E3E5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D3A3915500098001E3E5D /* AppDelegate.m */; };
 		5D5D3A4415500098001E3E5D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D3A4315500098001E3E5D /* SecondViewController.m */; };
-		5D5D3A4615500098001E3E5D /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A4515500098001E3E5D /* second.png */; };
-		5D5D3A4815500098001E3E5D /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A4715500098001E3E5D /* second@2x.png */; };
 		5D5D3A6515500183001E3E5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A6015500182001E3E5D /* InfoPlist.strings */; };
 		5D5D3A6615500183001E3E5D /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A6215500183001E3E5D /* SecondViewController.xib */; };
 		5D5D3A721550078F001E3E5D /* HomeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A711550078F001E3E5D /* HomeButton.png */; };
@@ -32,13 +30,15 @@
 		5D5D3A9E15502D2B001E3E5D /* ActualiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D3A9D15502D2B001E3E5D /* ActualiteViewController.m */; };
 		5D5D3AA015502E17001E3E5D /* RSS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3A9F15502E17001E3E5D /* RSS@2x.png */; };
 		5D5D3AB1155050F8001E3E5D /* ProgramationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D3AB0155050F8001E3E5D /* ProgramationViewController.m */; };
-		5D5D3AC015506C7C001E3E5D /* programation2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3ABC15506C7C001E3E5D /* programation2@2x.png */; };
-		5D5D3AC115506C7C001E3E5D /* programation3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3ABD15506C7C001E3E5D /* programation3@2x.png */; };
-		5D5D3AC815506CA9001E3E5D /* programation2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AC415506CA9001E3E5D /* programation2.png */; };
-		5D5D3AC915506CA9001E3E5D /* programation3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AC515506CA9001E3E5D /* programation3.png */; };
+		5D5D3AC115506C7C001E3E5D /* programation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3ABD15506C7C001E3E5D /* programation@2x.png */; };
+		5D5D3AC915506CA9001E3E5D /* programation.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AC515506CA9001E3E5D /* programation.png */; };
 		5D5D3ACD15506FC1001E3E5D /* PresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D3ACC15506FC0001E3E5D /* PresentationViewController.m */; };
 		5D5D3AD01550723C001E3E5D /* Presentation.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3ACE1550723C001E3E5D /* Presentation.png */; };
 		5D5D3AD11550723C001E3E5D /* Presentation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3ACF1550723C001E3E5D /* Presentation@2x.png */; };
+		5D5D3AD415507D6B001E3E5D /* facebook-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AD215507D6B001E3E5D /* facebook-logo.png */; };
+		5D5D3AD515507D6B001E3E5D /* twitter-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AD315507D6B001E3E5D /* twitter-logo.jpg */; };
+		5D5D3AD8155084F7001E3E5D /* BGTabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AD6155084F7001E3E5D /* BGTabBar.png */; };
+		5D5D3AD9155084F7001E3E5D /* BGTabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AD7155084F7001E3E5D /* BGTabBar@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +53,6 @@
 		5D5D3A3915500098001E3E5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5D5D3A4215500098001E3E5D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		5D5D3A4315500098001E3E5D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		5D5D3A4515500098001E3E5D /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = CNR/second.png; sourceTree = "<group>"; };
-		5D5D3A4715500098001E3E5D /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "CNR/second@2x.png"; sourceTree = "<group>"; };
 		5D5D3A6115500183001E3E5D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5D5D3A6315500183001E3E5D /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/SecondViewController.xib; sourceTree = "<group>"; };
 		5D5D3A711550078F001E3E5D /* HomeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HomeButton.png; path = ../../imgs/HomeButton.png; sourceTree = "<group>"; };
@@ -79,14 +77,16 @@
 		5D5D3A9F15502E17001E3E5D /* RSS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RSS@2x.png"; path = "../../imgs/RSS@2x.png"; sourceTree = "<group>"; };
 		5D5D3AAF155050F8001E3E5D /* ProgramationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramationViewController.h; sourceTree = "<group>"; };
 		5D5D3AB0155050F8001E3E5D /* ProgramationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramationViewController.m; sourceTree = "<group>"; };
-		5D5D3ABC15506C7C001E3E5D /* programation2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "programation2@2x.png"; sourceTree = "<group>"; };
-		5D5D3ABD15506C7C001E3E5D /* programation3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "programation3@2x.png"; sourceTree = "<group>"; };
-		5D5D3AC415506CA9001E3E5D /* programation2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = programation2.png; path = ../../imgs/programation2.png; sourceTree = "<group>"; };
-		5D5D3AC515506CA9001E3E5D /* programation3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = programation3.png; path = ../../imgs/programation3.png; sourceTree = "<group>"; };
+		5D5D3ABD15506C7C001E3E5D /* programation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "programation@2x.png"; sourceTree = "<group>"; };
+		5D5D3AC515506CA9001E3E5D /* programation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = programation.png; path = ../../imgs/programation.png; sourceTree = "<group>"; };
 		5D5D3ACB15506FC0001E3E5D /* PresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationViewController.h; sourceTree = "<group>"; };
 		5D5D3ACC15506FC0001E3E5D /* PresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationViewController.m; sourceTree = "<group>"; };
 		5D5D3ACE1550723C001E3E5D /* Presentation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Presentation.png; path = ../../imgs/Presentation.png; sourceTree = "<group>"; };
 		5D5D3ACF1550723C001E3E5D /* Presentation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Presentation@2x.png"; path = "../../imgs/Presentation@2x.png"; sourceTree = "<group>"; };
+		5D5D3AD215507D6B001E3E5D /* facebook-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "facebook-logo.png"; path = "../../imgs/facebook-logo.png"; sourceTree = "<group>"; };
+		5D5D3AD315507D6B001E3E5D /* twitter-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "twitter-logo.jpg"; path = "../../imgs/twitter-logo.jpg"; sourceTree = "<group>"; };
+		5D5D3AD6155084F7001E3E5D /* BGTabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BGTabBar.png; path = ../../imgs/BGTabBar.png; sourceTree = "<group>"; };
+		5D5D3AD7155084F7001E3E5D /* BGTabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BGTabBar@2x.png"; path = "../../imgs/BGTabBar@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,20 +158,20 @@
 		5D5D3A7315500944001E3E5D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5D5D3AD6155084F7001E3E5D /* BGTabBar.png */,
+				5D5D3AD7155084F7001E3E5D /* BGTabBar@2x.png */,
+				5D5D3AD215507D6B001E3E5D /* facebook-logo.png */,
+				5D5D3AD315507D6B001E3E5D /* twitter-logo.jpg */,
 				5D5D3ACE1550723C001E3E5D /* Presentation.png */,
 				5D5D3ACF1550723C001E3E5D /* Presentation@2x.png */,
-				5D5D3AC415506CA9001E3E5D /* programation2.png */,
-				5D5D3AC515506CA9001E3E5D /* programation3.png */,
-				5D5D3ABC15506C7C001E3E5D /* programation2@2x.png */,
-				5D5D3ABD15506C7C001E3E5D /* programation3@2x.png */,
+				5D5D3AC515506CA9001E3E5D /* programation.png */,
+				5D5D3ABD15506C7C001E3E5D /* programation@2x.png */,
 				5D5D3A9415501D53001E3E5D /* RSS.png */,
 				5D5D3A9F15502E17001E3E5D /* RSS@2x.png */,
 				5D5D3A711550078F001E3E5D /* HomeButton.png */,
 				5D5D3A9A1550252E001E3E5D /* HomeButton@2x.png */,
 				5D5D3A9815501DB5001E3E5D /* LaCNR.png */,
 				5D5D3A9315501D53001E3E5D /* programmation.png */,
-				5D5D3A4515500098001E3E5D /* second.png */,
-				5D5D3A4715500098001E3E5D /* second@2x.png */,
 			);
 			name = Resources;
 			path = ..;
@@ -279,8 +279,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D5D3A4615500098001E3E5D /* second.png in Resources */,
-				5D5D3A4815500098001E3E5D /* second@2x.png in Resources */,
 				5D5D3A6515500183001E3E5D /* InfoPlist.strings in Resources */,
 				5D5D3A6615500183001E3E5D /* SecondViewController.xib in Resources */,
 				5D5D3A721550078F001E3E5D /* HomeButton.png in Resources */,
@@ -292,12 +290,14 @@
 				5D5D3A9915501DB5001E3E5D /* LaCNR.png in Resources */,
 				5D5D3A9B1550252E001E3E5D /* HomeButton@2x.png in Resources */,
 				5D5D3AA015502E17001E3E5D /* RSS@2x.png in Resources */,
-				5D5D3AC015506C7C001E3E5D /* programation2@2x.png in Resources */,
-				5D5D3AC115506C7C001E3E5D /* programation3@2x.png in Resources */,
-				5D5D3AC815506CA9001E3E5D /* programation2.png in Resources */,
-				5D5D3AC915506CA9001E3E5D /* programation3.png in Resources */,
+				5D5D3AC115506C7C001E3E5D /* programation@2x.png in Resources */,
+				5D5D3AC915506CA9001E3E5D /* programation.png in Resources */,
 				5D5D3AD01550723C001E3E5D /* Presentation.png in Resources */,
 				5D5D3AD11550723C001E3E5D /* Presentation@2x.png in Resources */,
+				5D5D3AD415507D6B001E3E5D /* facebook-logo.png in Resources */,
+				5D5D3AD515507D6B001E3E5D /* twitter-logo.jpg in Resources */,
+				5D5D3AD8155084F7001E3E5D /* BGTabBar.png in Resources */,
+				5D5D3AD9155084F7001E3E5D /* BGTabBar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

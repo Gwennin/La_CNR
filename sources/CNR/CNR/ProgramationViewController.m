@@ -20,7 +20,7 @@
     if (self) {
 		
 		self.title = @"Programation";
-		self.tabBarItem.image = [UIImage imageNamed:@"programation2.png"];
+		self.tabBarItem.image = [UIImage imageNamed:@"programation.png"];
 		self.view.backgroundColor = [UIColor whiteColor];
 	}
     return self;

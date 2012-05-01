@@ -52,4 +52,12 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(void)goToTwitter:(id)sender {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://mobile.twitter.com/lacnr"]];
+}
+
+-(void)goToFacebook:(id)sender {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://m.facebook.com/La.cantine.numerique.rennaise"]];
+}
+
 @end

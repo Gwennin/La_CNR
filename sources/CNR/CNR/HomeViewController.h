@@ -10,4 +10,7 @@
 
 @interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+-(IBAction)goToTwitter:(id)sender;
+-(IBAction)goToFacebook:(id)sender;
+
 @end
