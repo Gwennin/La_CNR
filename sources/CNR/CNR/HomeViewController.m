@@ -19,14 +19,14 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
 		
-		self.title = @"Acceuil";
+		self.title = @"Accueil";
 		self.tabBarItem.image = [UIImage imageNamed:@"HomeButton.png"];
     }
     return self;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return @"Prochain évènements";
+	return @"Prochains évènements";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -41,7 +41,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FastView"];
 	
-	cell.textLabel.text = [NSString stringWithFormat:@"Prochain évènement %i", indexPath.row];
+	cell.textLabel.text = [NSString stringWithFormat:@"Prochaisn évènements %i", indexPath.row];
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
 	return cell;
