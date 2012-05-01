@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EventRepository : NSObject
+#import "Event.h"
+
+@interface EventRepository : NSObject <NSXMLParserDelegate>
+{
+    NSMutableString* currentNodeValue;
+    NSMutableArray* events;
+    Event* event;
+}
+
+- (id) init;
+
+@property (nonatomic) NSMutableArray* events;
+
+- (id) parseXMLAtURL:(NSURL *) url;
 
 @end
