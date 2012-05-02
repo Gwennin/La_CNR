@@ -20,5 +20,7 @@
 @property (nonatomic) NSMutableArray* events;
 
 + (EventRepository*) sharedEventRepository;
+    
+    //Methode retournant les jours où il y a un event
 
 @end

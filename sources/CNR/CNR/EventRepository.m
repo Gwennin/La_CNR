@@ -1,10 +1,10 @@
-//
-//  EventRepository.m
-//  CNR
-//
-//  Created by Adrien Robert on 01/05/12.
-//  Copyright (c) 2012 Supinfo. All rights reserved.
-//
+    //
+    //  EventRepository.m
+    //  CNR
+    //
+    //  Created by Adrien Robert on 01/05/12.
+    //  Copyright (c) 2012 Supinfo. All rights reserved.
+    //
 
 #import "EventRepository.h"
 
@@ -20,6 +20,7 @@
         NSURL* url = [[NSURL alloc] initWithString:@"http://www.google.com/calendar/feeds/lacantine-rennes.net_quif80miv5nm9eq3c38oinbc00%40group.calendar.google.com/public/basic"];
         
         [self parseXMLAtURL:url];
+        [self orderByDateAsc];
     }
     return self;
 }
@@ -67,7 +68,7 @@ static EventRepository* __sharedEventRepository = nil;
 {
     if([elementName isEqualToString:@"id"])
     {
-            [event setIdE:currentNodeValue];
+        [event setIdE:currentNodeValue];
     }
     else if([elementName isEqualToString:@"title"])
     {
@@ -112,4 +113,34 @@ static EventRepository* __sharedEventRepository = nil;
         [currentNodeValue appendString: [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
     }
 }
+
+- (void) orderByDateAsc
+{
+    BOOL enOrdre = NO;
+    while(!enOrdre){
+        enOrdre = YES;
+        for (int i = 0; i+1 < [events count]; i++)
+        {
+            Event* e1 = [events objectAtIndex:i];
+            Event* e2 = [events objectAtIndex:i+1];
+            
+            if([[e1 date] compare:[e2 date]] != NSOrderedAscending)
+            {
+                enOrdre = NO;
+                [events removeObjectAtIndex:i+1];
+                [events insertObject:e1 atIndex:i+1];
+                
+                [events removeObjectAtIndex:i];
+                [events insertObject:e2 atIndex:i];
+            }
+        }
+    }
+    
+    for (Event* e in events) {
+        NSDateFormatter* df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"dd/MM/yyyy"];
+        NSLog(@"%@", [df stringFromDate:[e date]]);
+    }
+}
+
 @end

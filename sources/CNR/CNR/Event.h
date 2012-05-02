@@ -16,6 +16,7 @@
     NSString * title;
     NSString * summary;
     NSString  * content;
+    NSDate* date;
 }
 
 @property (nonatomic, retain) NSString * idE;
@@ -24,9 +25,12 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString  * content;
+@property (nonatomic, retain) NSDate* date;
 
 - (id) init;
+
 #if DEBUG
 - (void) show;
 #endif
+
 @end
