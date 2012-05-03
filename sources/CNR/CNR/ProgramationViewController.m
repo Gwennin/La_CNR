@@ -19,7 +19,7 @@
     self = [super initWithStyle:style];
     if (self) {
 		
-		self.title = @"Programation";
+		self.title = @"Programmation";
 		self.tabBarItem.image = [UIImage imageNamed:@"programation.png"];
 		self.view.backgroundColor = [UIColor whiteColor];
 	}

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PresentationViewController : UIViewController
+@interface PresentationViewController : UIViewController <UIWebViewDelegate>
 
 @end

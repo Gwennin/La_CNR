@@ -23,8 +23,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    er = [EventRepository sharedEventRepository];
+    //er = [EventRepository sharedEventRepository];
     
+	[NSThread detachNewThreadSelector:@selector(sharedEventRepository) toTarget:[EventRepository class] withObject:nil];
+	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
 	UIViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];

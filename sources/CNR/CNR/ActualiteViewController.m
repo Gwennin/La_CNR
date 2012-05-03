@@ -7,6 +7,7 @@
 //
 
 #import "ActualiteViewController.h"
+#import "ArticleDetailViewController.h"
 
 @interface ActualiteViewController ()
 
@@ -65,7 +66,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	ArticleDetailViewController* advc = [[ArticleDetailViewController alloc] initWithNibName:@"ArticleDetailViewController" bundle:nil];
 	
+	[self.navigationController pushViewController:advc animated:YES];
 }
 
 @end

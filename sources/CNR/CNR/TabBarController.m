@@ -21,8 +21,6 @@
 	CGRect frame = CGRectMake(0.0, 1.0, self.view.bounds.size.width, 48);
     UIImageView *v = [[UIImageView alloc] initWithFrame:frame];
 	[v setImage:[UIImage imageNamed:@"BGTabBar.png"]];
-    //[v setBackgroundColor:[UIColor colorWithRed:253.0/255.0f green:228.0/255.0f blue:0 alpha:1.0]];
-    //[v setAlpha:0.95];
     [[self tabBar] addSubview:v];
 }
 
@@ -35,16 +33,7 @@
 		
 		UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:vc];
 		
-		UILabel* titleLabel = [[UILabel alloc] init];
-		titleLabel.text = vc.title;
-		titleLabel.textColor = [UIColor blackColor];
-		titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
-		titleLabel.backgroundColor = [UIColor clearColor];
-		titleLabel.textAlignment = UITextAlignmentCenter;
 		
-		navController.navigationBar.topItem.titleView = titleLabel;
-		
-		[titleLabel sizeToFit];
 		
 		navController.navigationBar.tintColor = [UIColor colorWithRed:253.0/255.0f green:228.0/255.0f blue:0 alpha:1.0];
 		
