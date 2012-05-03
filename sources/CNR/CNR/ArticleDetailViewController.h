@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface ArticleDetailViewController : UIViewController
+@interface ArticleDetailViewController : UIViewController <UIActionSheetDelegate, MFMailComposeViewControllerDelegate> {
+	IBOutlet UIScrollView* scrollView;
+}
+
+-(IBAction)actionButtonPressed:(id)sender;
 
 @end

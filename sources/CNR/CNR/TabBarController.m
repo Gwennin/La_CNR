@@ -7,6 +7,7 @@
 //
 
 #import "TabBarController.h"
+#import "NavigationController.h"
 
 @interface TabBarController ()
 
@@ -31,7 +32,7 @@
 	
 	for (UIViewController* vc in viewControllers) {
 		
-		UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:vc];
+		NavigationController* navController = [[NavigationController alloc] initWithRootViewController:vc];
 		
 		
 		

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D42C7561553392D00B2783B /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D42C7551553392D00B2783B /* Twitter.framework */; };
+		5D42C75915533B0000B2783B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D42C75815533B0000B2783B /* MessageUI.framework */; };
+		5D42C75D15533C9600B2783B /* EvenementDetailViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D42C75B15533C9600B2783B /* EvenementDetailViewControllerViewController.m */; };
+		5D42C75E15533C9600B2783B /* EvenementDetailViewControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D42C75C15533C9600B2783B /* EvenementDetailViewControllerViewController.xib */; };
 		5D5D3A2A15500098001E3E5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5D3A2915500098001E3E5D /* UIKit.framework */; };
 		5D5D3A2C15500098001E3E5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5D3A2B15500098001E3E5D /* Foundation.framework */; };
 		5D5D3A2E15500098001E3E5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5D3A2D15500098001E3E5D /* CoreGraphics.framework */; };
@@ -45,11 +49,17 @@
 		5DE7912F15513A5400A181BD /* ArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7912D15513A5400A181BD /* ArticleDetailViewController.m */; };
 		5DE7913015513A5400A181BD /* ArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DE7912E15513A5400A181BD /* ArticleDetailViewController.xib */; };
 		5DE7913315513EDB00A181BD /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7913215513EDB00A181BD /* NavigationController.m */; };
+		5DE791361551487800A181BD /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE791351551487800A181BD /* NavigationBar.m */; };
 		7A7033091550803C00804C31 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7033061550803C00804C31 /* Event.m */; };
 		7A70330A1550803C00804C31 /* EventRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7033081550803C00804C31 /* EventRepository.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D42C7551553392D00B2783B /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		5D42C75815533B0000B2783B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5D42C75A15533C9600B2783B /* EvenementDetailViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvenementDetailViewControllerViewController.h; sourceTree = "<group>"; };
+		5D42C75B15533C9600B2783B /* EvenementDetailViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvenementDetailViewControllerViewController.m; sourceTree = "<group>"; };
+		5D42C75C15533C9600B2783B /* EvenementDetailViewControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvenementDetailViewControllerViewController.xib; sourceTree = "<group>"; };
 		5D5D3A2515500098001E3E5D /* CNR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5D3A2915500098001E3E5D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5D5D3A2B15500098001E3E5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,6 +109,8 @@
 		5DE7912E15513A5400A181BD /* ArticleDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleDetailViewController.xib; sourceTree = "<group>"; };
 		5DE7913115513EDB00A181BD /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		5DE7913215513EDB00A181BD /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		5DE791341551487800A181BD /* NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
+		5DE791351551487800A181BD /* NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
 		7A7033051550803C00804C31 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		7A7033061550803C00804C31 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		7A7033071550803C00804C31 /* EventRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventRepository.h; sourceTree = "<group>"; };
@@ -110,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D42C75915533B0000B2783B /* MessageUI.framework in Frameworks */,
+				5D42C7561553392D00B2783B /* Twitter.framework in Frameworks */,
 				5D5D3A2A15500098001E3E5D /* UIKit.framework in Frameworks */,
 				5D5D3A2C15500098001E3E5D /* Foundation.framework in Frameworks */,
 				5D5D3A2E15500098001E3E5D /* CoreGraphics.framework in Frameworks */,
@@ -139,6 +153,8 @@
 		5D5D3A2815500098001E3E5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D42C75815533B0000B2783B /* MessageUI.framework */,
+				5D42C7551553392D00B2783B /* Twitter.framework */,
 				5D5D3A2915500098001E3E5D /* UIKit.framework */,
 				5D5D3A2B15500098001E3E5D /* Foundation.framework */,
 				5D5D3A2D15500098001E3E5D /* CoreGraphics.framework */,
@@ -218,6 +234,8 @@
 				5D5D3A7B15500B10001E3E5D /* TabBarController.m */,
 				5DE7913115513EDB00A181BD /* NavigationController.h */,
 				5DE7913215513EDB00A181BD /* NavigationController.m */,
+				5DE791341551487800A181BD /* NavigationBar.h */,
+				5DE791351551487800A181BD /* NavigationBar.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -228,6 +246,9 @@
 				5DE7912C15513A5400A181BD /* ArticleDetailViewController.h */,
 				5DE7912D15513A5400A181BD /* ArticleDetailViewController.m */,
 				5DE7912E15513A5400A181BD /* ArticleDetailViewController.xib */,
+				5D42C75A15533C9600B2783B /* EvenementDetailViewControllerViewController.h */,
+				5D42C75B15533C9600B2783B /* EvenementDetailViewControllerViewController.m */,
+				5D42C75C15533C9600B2783B /* EvenementDetailViewControllerViewController.xib */,
 			);
 			name = Secondary;
 			sourceTree = "<group>";
@@ -337,6 +358,7 @@
 				5DE7912715512BB100A181BD /* logo_web2rennes.png in Resources */,
 				5DE791291551352900A181BD /* programation@2x.png in Resources */,
 				5DE7913015513A5400A181BD /* ArticleDetailViewController.xib in Resources */,
+				5D42C75E15533C9600B2783B /* EvenementDetailViewControllerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +380,8 @@
 				7A70330A1550803C00804C31 /* EventRepository.m in Sources */,
 				5DE7912F15513A5400A181BD /* ArticleDetailViewController.m in Sources */,
 				5DE7913315513EDB00A181BD /* NavigationController.m in Sources */,
+				5DE791361551487800A181BD /* NavigationBar.m in Sources */,
+				5D42C75D15533C9600B2783B /* EvenementDetailViewControllerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

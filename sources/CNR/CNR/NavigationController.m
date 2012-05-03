@@ -21,9 +21,24 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
+-(void)viewDidAppear:(BOOL)animated {
+	[self setTitleColor:@"Test"];
+}
+
 -(void)setTitleColor:(NSString*)title {
 	
-	self.t
+	for (id subView in self.navigationBar.subviews) {
+		if ([subView isKindOfClass:[UIButton class]]) {
+			[(UIButton *)subView setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+			[(UIButton *)subView setTitleShadowColor:[UIColor clearColor] forState:UIControlStateNormal];
+		}
+		else if ([subView isKindOfClass:[UILabel class]]) {
+			[(UILabel*)subView setTextColor:[UIColor blackColor]];
+			[(UILabel*)subView setShadowColor:[UIColor clearColor]];
+		}
+	}
+	/*self.t*/
 	
 	UILabel* titleLabel = [[UILabel alloc] init];
 	titleLabel.text = title;
