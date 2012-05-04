@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>facebookURI</key>
+	<string>http://m.facebook.com/La.cantine.numerique.rennaise</string>
+	<key>settingsVersion</key>
+	<string>0.9a</string>
+	<key>twitterURI</key>
+	<string>http://mobile.twitter.com/lacnr</string>
+	<key>cantineURI</key>
+	<string>http://http://www.lacantine-rennes.net/</string>
+	<key>eventURI</key>
+	<string>http://www.google.com/calendar/feeds/lacantine-rennes.net_quif80miv5nm9eq3c38oinbc00%40group.calendar.google.com/public/basic</string>
+	<key>rssURI</key>
+	<string>http://www.lacantine-rennes.net/feed/</string>
+</dict>
+</plist>

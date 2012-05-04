@@ -7,6 +7,7 @@
     //
 
 #import "EventRepository.h"
+#import "Settings.h"
 
 @implementation EventRepository
 
@@ -14,15 +15,21 @@
 
 - (id)init
 {
-    self = [super init];
-    if(self)
-    {
-        NSURL* url = [[NSURL alloc] initWithString:@"http://www.google.com/calendar/feeds/lacantine-rennes.net_quif80miv5nm9eq3c38oinbc00%40group.calendar.google.com/public/basic"];
-        
-        [self parseXMLAtURL:url];
-        [self orderByDateAsc];
-    }
-    return self;
+	if (!__sharedEventRepository) {
+		self = [super init];
+		if(self)
+		{
+			
+			Settings* settings = [Settings sharedSettings];
+			
+			parseURL = [[NSURL alloc] initWithString:[settings eventURI]];
+			
+			[self parseXMLAtURL:parseURL];
+			[self orderByDateAsc];
+		}
+		return self;
+	}
+    return nil;
 }
 
 static EventRepository* __sharedEventRepository = nil;
@@ -43,15 +50,8 @@ static EventRepository* __sharedEventRepository = nil;
 - (id)parseXMLAtURL:(NSURL *)url
 {
     events = [[NSMutableArray alloc] init];
-    NSXMLParser* parser = [[NSXMLParser alloc]initWithContentsOfURL:url];
-    [parser setDelegate:self];
-    [parser parse];
     
-    if([parser parserError])
-    {
-        NSError* e = [parser parserError];
-        NSLog(@"Error %i: %@", [e code], [e domain]);
-    }
+	[super parseXMLAtURL:url];
     
     return self;
 }

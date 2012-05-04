@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D3C415F1554383C0007A374 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D3C415E1554383C0007A374 /* Settings.plist */; };
+		5D3C4166155438DA0007A374 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3C4165155438DA0007A374 /* Settings.m */; };
 		5D42C7561553392D00B2783B /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D42C7551553392D00B2783B /* Twitter.framework */; };
 		5D42C75915533B0000B2783B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D42C75815533B0000B2783B /* MessageUI.framework */; };
 		5D42C75D15533C9600B2783B /* EvenementDetailViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D42C75B15533C9600B2783B /* EvenementDetailViewControllerViewController.m */; };
@@ -35,6 +37,9 @@
 		5D5D3AD515507D6B001E3E5D /* twitter-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AD315507D6B001E3E5D /* twitter-logo.jpg */; };
 		5D5D3AD8155084F7001E3E5D /* BGTabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AD6155084F7001E3E5D /* BGTabBar.png */; };
 		5D5D3AD9155084F7001E3E5D /* BGTabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AD7155084F7001E3E5D /* BGTabBar@2x.png */; };
+		5DBDDB6E1554416C00B311BB /* ExternalFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB6D1554416C00B311BB /* ExternalFeed.m */; };
+		5DBDDB72155444AC00B311BB /* RSSPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB71155444AC00B311BB /* RSSPost.m */; };
+		5DBDDB75155448D100B311BB /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB74155448D100B311BB /* RSSParser.m */; };
 		5DE7911115511D5900A181BD /* presentation.html in Resources */ = {isa = PBXBuildFile; fileRef = 5DE7911015511D5900A181BD /* presentation.html */; };
 		5DE7911F15512BB100A181BD /* logo_atalante.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DE7911615512BB100A181BD /* logo_atalante.png */; };
 		5DE7912015512BB100A181BD /* logo_Bug.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DE7911715512BB100A181BD /* logo_Bug.png */; };
@@ -55,6 +60,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D3C415E1554383C0007A374 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		5D3C4164155438DA0007A374 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		5D3C4165155438DA0007A374 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		5D42C7551553392D00B2783B /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		5D42C75815533B0000B2783B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5D42C75A15533C9600B2783B /* EvenementDetailViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvenementDetailViewControllerViewController.h; sourceTree = "<group>"; };
@@ -93,6 +101,12 @@
 		5D5D3AD315507D6B001E3E5D /* twitter-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "twitter-logo.jpg"; path = "../../imgs/twitter-logo.jpg"; sourceTree = "<group>"; };
 		5D5D3AD6155084F7001E3E5D /* BGTabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BGTabBar.png; path = ../../imgs/BGTabBar.png; sourceTree = "<group>"; };
 		5D5D3AD7155084F7001E3E5D /* BGTabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BGTabBar@2x.png"; path = "../../imgs/BGTabBar@2x.png"; sourceTree = "<group>"; };
+		5DBDDB6C1554416C00B311BB /* ExternalFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExternalFeed.h; sourceTree = "<group>"; };
+		5DBDDB6D1554416C00B311BB /* ExternalFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExternalFeed.m; sourceTree = "<group>"; };
+		5DBDDB70155444AC00B311BB /* RSSPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSPost.h; sourceTree = "<group>"; };
+		5DBDDB71155444AC00B311BB /* RSSPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSPost.m; sourceTree = "<group>"; };
+		5DBDDB73155448D100B311BB /* RSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSParser.h; sourceTree = "<group>"; };
+		5DBDDB74155448D100B311BB /* RSSParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSParser.m; sourceTree = "<group>"; };
 		5DE7911015511D5900A181BD /* presentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = presentation.html; sourceTree = "<group>"; };
 		5DE7911615512BB100A181BD /* logo_atalante.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_atalante.png; path = ../../imgs/logo_atalante.png; sourceTree = "<group>"; };
 		5DE7911715512BB100A181BD /* logo_Bug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_Bug.png; path = ../../imgs/logo_Bug.png; sourceTree = "<group>"; };
@@ -133,6 +147,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D3C415C155437F70007A374 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				5D3C415E1554383C0007A374 /* Settings.plist */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
 		5D5D3A1A15500098001E3E5D = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +192,7 @@
 				5D5D3A3915500098001E3E5D /* AppDelegate.m */,
 				5D5D3A7515500979001E3E5D /* ViewControllers */,
 				5D5D3A76155009A2001E3E5D /* Helpers */,
+				5D3C415C155437F70007A374 /* Global */,
 				5D5D3A7315500944001E3E5D /* Resources */,
 				5D5D3A3015500098001E3E5D /* Supporting Files */,
 				5D5D3A6015500182001E3E5D /* InfoPlist.strings */,
@@ -276,6 +299,14 @@
 				7A7033061550803C00804C31 /* Event.m */,
 				7A7033071550803C00804C31 /* EventRepository.h */,
 				7A7033081550803C00804C31 /* EventRepository.m */,
+				5D3C4164155438DA0007A374 /* Settings.h */,
+				5D3C4165155438DA0007A374 /* Settings.m */,
+				5DBDDB6C1554416C00B311BB /* ExternalFeed.h */,
+				5DBDDB6D1554416C00B311BB /* ExternalFeed.m */,
+				5DBDDB70155444AC00B311BB /* RSSPost.h */,
+				5DBDDB71155444AC00B311BB /* RSSPost.m */,
+				5DBDDB73155448D100B311BB /* RSSParser.h */,
+				5DBDDB74155448D100B311BB /* RSSParser.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -359,6 +390,7 @@
 				5DE791291551352900A181BD /* programation@2x.png in Resources */,
 				5DE7913015513A5400A181BD /* ArticleDetailViewController.xib in Resources */,
 				5D42C75E15533C9600B2783B /* EvenementDetailViewControllerViewController.xib in Resources */,
+				5D3C415F1554383C0007A374 /* Settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +414,10 @@
 				5DE7913315513EDB00A181BD /* NavigationController.m in Sources */,
 				5DE791361551487800A181BD /* NavigationBar.m in Sources */,
 				5D42C75D15533C9600B2783B /* EvenementDetailViewControllerViewController.m in Sources */,
+				5D3C4166155438DA0007A374 /* Settings.m in Sources */,
+				5DBDDB6E1554416C00B311BB /* ExternalFeed.m in Sources */,
+				5DBDDB72155444AC00B311BB /* RSSPost.m in Sources */,
+				5DBDDB75155448D100B311BB /* RSSParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

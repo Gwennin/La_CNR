@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 #import "Event.h"
+#import "ExternalFeed.h"
 
-@interface EventRepository : NSObject <NSXMLParserDelegate>
+@interface EventRepository : ExternalFeed
 {
     NSMutableString* currentNodeValue;
     NSMutableArray* events;

@@ -60,11 +60,12 @@
 }
 
 -(void)goToTwitter:(id)sender {
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://mobile.twitter.com/lacnr"]];
+	Settings* settings = [Settings sharedSettings];
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[settings twitterURI]]];
 }
 
 -(void)goToFacebook:(id)sender {
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://m.facebook.com/La.cantine.numerique.rennaise"]];
-}
+	Settings* settings = [Settings sharedSettings];
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[settings facebookURI]]];}
 
 @end
