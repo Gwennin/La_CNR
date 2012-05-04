@@ -12,22 +12,12 @@
 
 @synthesize title, pubDate, link, description, content, readed;
 
--(id)initWithTitle:(NSString*)t
-			  link:(NSString*)l
-   publicationDate:(NSDate*)date
-	   description:(NSString*)d
-		   content:(NSString*)c {
+-(id)init {
 	
 	self = [super init];
 	
 	if (self) {
 		readed = NO;
-		
-		title = t;
-		link = l;
-		pubDate = date;
-		description = d;
-		content = c;
 	}
 	
 	return self;

@@ -48,4 +48,58 @@ static RSSParser* _singletone = nil;
 	return self;
 }
 
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
+{
+    if([elementName isEqualToString:@"item"])
+    {
+        post = [[RSSPost alloc] init];
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
+{
+    if([elementName isEqualToString:@"title"])
+    {
+        [post setTitle:currentNodeValue];
+    }
+    else if([elementName isEqualToString:@"link"])
+    {
+        [post setLink:currentNodeValue];
+    }
+    else if([elementName isEqualToString:@"pubDate"])
+    {
+        NSDateFormatter* df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"eee, dd MMM yyyy HH:mm:ss ZZZZ"];
+		[df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+		
+        [post setPubDate:[df dateFromString:@"Sun, 03 May 2009 19:58:58 -0700"]];
+    }
+	else if([elementName isEqualToString:@"description"])
+    {
+        [post setDescription:currentNodeValue];
+    }
+    else if([elementName isEqualToString:@"content:encoded"])
+    {
+        [post setContent:currentNodeValue];
+    }
+    else if([elementName isEqualToString:@"item"] && post)
+    {
+        [posts addObject:post];
+        post = nil;
+    }
+    currentNodeValue = nil;
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
+{
+    if(!currentNodeValue)
+    {
+        currentNodeValue = [[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] mutableCopy];
+    }
+    else
+    {
+        [currentNodeValue appendString: [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+    }
+}
+
 @end

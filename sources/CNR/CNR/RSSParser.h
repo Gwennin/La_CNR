@@ -7,9 +7,13 @@
 //
 
 #import "ExternalFeed.h"
+#import "RSSPost.h"
 
 @interface RSSParser : ExternalFeed {
+	
+	NSMutableString* currentNodeValue;
 	NSMutableArray* posts;
+	RSSPost* post;
 }
 
 +(RSSParser*)sharedRSSParser;

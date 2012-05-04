@@ -14,6 +14,7 @@
 #import "ProgramationViewController.h"
 #import "PresentationViewController.h"
 #import "EventRepository.h"
+#import "RSSParser.h"
 
 @implementation AppDelegate
 
@@ -25,8 +26,10 @@
 {
     //er = [EventRepository sharedEventRepository];
     
-	[NSThread detachNewThreadSelector:@selector(sharedEventRepository) toTarget:[EventRepository class] withObject:nil];
-		
+	//[NSThread detachNewThreadSelector:@selector(sharedEventRepository) toTarget:[EventRepository class] withObject:nil];
+	
+	//[RSSParser sharedRSSParser];
+	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
 	UIViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
