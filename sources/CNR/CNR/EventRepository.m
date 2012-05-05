@@ -33,6 +33,7 @@
 			parseURL = [[NSURL alloc] initWithString:[settings eventURI]];
 			
 			[self parseXMLAtURL:parseURL];
+            [self deleteOldEvent];
 			[self orderByDateAsc];
 		}
 		return self;
@@ -127,6 +128,25 @@ static EventRepository* __sharedEventRepository = nil;
     NSSortDescriptor* dateDesc = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
     
     events = [NSArray arrayWithArray:[events sortedArrayUsingDescriptors:[[NSArray alloc] initWithObjects:dateDesc, nil]]];
+}
+
+- (void) deleteOldEvent
+{
+    NSDate* today = [[NSDate alloc] init];
+    BOOL clean = NO;
+    while(!clean)
+    {
+        clean = YES;
+        for(int i = 0; i < [events count]; i++)
+        {
+            if([[[events objectAtIndex:i] date] compare:today] == NSOrderedAscending)
+            {
+                NSLog(@"delete %i", i);
+                [events removeObjectAtIndex:i];
+                clean = NO;
+            }
+        }
+    }
 }
 
 - (NSArray*) deleteDuplicatedDates
