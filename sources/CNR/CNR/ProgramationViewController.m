@@ -23,6 +23,7 @@
 		self.title = @"Programmation";
 		self.tabBarItem.image = [UIImage imageNamed:@"programation.png"];
 		self.view.backgroundColor = [UIColor whiteColor];
+        er = [EventRepository sharedEventRepository];
 	}
     return self;
 }
@@ -36,7 +37,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 10;
+    return [[er uniqueDates] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -45,7 +46,7 @@
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return [NSString stringWithFormat:@"Mardi %i mai 2012", section * 7 + 1];
+	return [NSString stringWithFormat:@"%@", [er titleForHeaderInSection:section]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

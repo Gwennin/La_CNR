@@ -13,15 +13,23 @@
 
 @synthesize events;
 
+- (NSArray*) uniqueDates
+{
+    if(uniqueDates == nil)
+        uniqueDates = [self deleteDuplicatedDates];
+    
+    return uniqueDates;
+}
+
 - (id)init
 {
 	if (!__sharedEventRepository) {
 		self = [super init];
 		if(self)
 		{
-			
 			Settings* settings = [Settings sharedSettings];
 			
+            uniqueDates = nil;
 			parseURL = [[NSURL alloc] initWithString:[settings eventURI]];
 			
 			[self parseXMLAtURL:parseURL];
@@ -119,12 +127,36 @@ static EventRepository* __sharedEventRepository = nil;
     NSSortDescriptor* dateDesc = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
     
     events = [NSArray arrayWithArray:[events sortedArrayUsingDescriptors:[[NSArray alloc] initWithObjects:dateDesc, nil]]];
+}
+
+- (NSArray*) deleteDuplicatedDates
+{
+        NSArray* dates = [events valueForKey:@"date"];
+        NSMutableArray* uDates = [[NSMutableArray alloc] initWithArray:dates];
+        
+        NSInteger index = [dates count] - 1;
+        for(NSDate* d in dates)
+        {
+            if([uDates indexOfObject:d inRange:NSMakeRange(0, index)] != NSNotFound)
+            {
+                [uDates removeObjectAtIndex:index];
+            }
+            index--;
+        }
+    return  [NSArray arrayWithArray:uDates];
+}
+
+- (NSString*) titleForHeaderInSection:(NSInteger) section
+{
+    NSDate* date = [uniqueDates objectAtIndex:section];
     
-    for (Event* e in events) {
-        NSDateFormatter* df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:@"dd/MM/yyyy"];
-        NSLog(@"%@", [df stringFromDate:[e date]]);
-    }
+    NSDateFormatter* df = [[NSDateFormatter alloc] init];
+    [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"fr_FR"]];
+    [df setDateFormat:@"EEEE dd MMMM yyyy"];
+    
+    NSString* strDate = [df stringFromDate:date];
+    
+    return  [strDate stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[strDate substringWithRange:NSMakeRange(0, 1)] capitalizedString]];
 }
 
 @end

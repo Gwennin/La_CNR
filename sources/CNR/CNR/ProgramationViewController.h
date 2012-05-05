@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EventRepository.h"
 
 @interface ProgramationViewController : UITableViewController
+{
+    EventRepository* er;
+}
 
 @end

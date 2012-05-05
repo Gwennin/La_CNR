@@ -16,12 +16,12 @@
     NSMutableString* currentNodeValue;
     NSMutableArray* events;
     Event* event;
+    NSArray* uniqueDates;
 }
 
 @property (nonatomic) NSMutableArray* events;
 
 + (EventRepository*) sharedEventRepository;
-    
-    //Methode retournant les jours où il y a un event
-
+- (NSString*) titleForHeaderInSection:(NSInteger) section;
+- (NSArray*) uniqueDates;
 @end
