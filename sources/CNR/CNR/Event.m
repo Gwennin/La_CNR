@@ -69,13 +69,4 @@
 	return [result objectAtIndex:0];
 }
 
-#if DEBUG
--(void)show
-{
-    NSLog(@"%@",[NSString stringWithFormat:@"Event %@", idE]);
-    NSLog(@"%@", title);
-    NSLog(@"%@", summary);
-}
-#endif
-
 @end

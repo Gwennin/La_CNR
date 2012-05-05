@@ -116,25 +116,9 @@ static EventRepository* __sharedEventRepository = nil;
 
 - (void) orderByDateAsc
 {
-    BOOL enOrdre = NO;
-    while(!enOrdre){
-        enOrdre = YES;
-        for (int i = 0; i+1 < [events count]; i++)
-        {
-            Event* e1 = [events objectAtIndex:i];
-            Event* e2 = [events objectAtIndex:i+1];
-            
-            if([[e1 date] compare:[e2 date]] != NSOrderedAscending)
-            {
-                enOrdre = NO;
-                [events removeObjectAtIndex:i+1];
-                [events insertObject:e1 atIndex:i+1];
-                
-                [events removeObjectAtIndex:i];
-                [events insertObject:e2 atIndex:i];
-            }
-        }
-    }
+    NSSortDescriptor* dateDesc = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+    
+    events = [NSArray arrayWithArray:[events sortedArrayUsingDescriptors:[[NSArray alloc] initWithObjects:dateDesc, nil]]];
     
     for (Event* e in events) {
         NSDateFormatter* df = [[NSDateFormatter alloc] init];

@@ -29,8 +29,4 @@
 
 - (id) init;
 
-#if DEBUG
-- (void) show;
-#endif
-
 @end
