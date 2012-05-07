@@ -40,6 +40,9 @@
 		5DBDDB6E1554416C00B311BB /* ExternalFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB6D1554416C00B311BB /* ExternalFeed.m */; };
 		5DBDDB72155444AC00B311BB /* RSSPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB71155444AC00B311BB /* RSSPost.m */; };
 		5DBDDB75155448D100B311BB /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB74155448D100B311BB /* RSSParser.m */; };
+		5DBDDB781554759300B311BB /* refreshBGHome.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBDDB761554759300B311BB /* refreshBGHome.png */; };
+		5DBDDB791554759300B311BB /* refreshBGHome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBDDB771554759300B311BB /* refreshBGHome@2x.png */; };
+		5DBDDB7C1554780100B311BB /* ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB7B1554780100B311BB /* ActivityIndicator.m */; };
 		5DE7911115511D5900A181BD /* presentation.html in Resources */ = {isa = PBXBuildFile; fileRef = 5DE7911015511D5900A181BD /* presentation.html */; };
 		5DE7911F15512BB100A181BD /* logo_atalante.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DE7911615512BB100A181BD /* logo_atalante.png */; };
 		5DE7912015512BB100A181BD /* logo_Bug.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DE7911715512BB100A181BD /* logo_Bug.png */; };
@@ -107,6 +110,10 @@
 		5DBDDB71155444AC00B311BB /* RSSPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSPost.m; sourceTree = "<group>"; };
 		5DBDDB73155448D100B311BB /* RSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSParser.h; sourceTree = "<group>"; };
 		5DBDDB74155448D100B311BB /* RSSParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSParser.m; sourceTree = "<group>"; };
+		5DBDDB761554759300B311BB /* refreshBGHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refreshBGHome.png; path = ../../imgs/refreshBGHome.png; sourceTree = "<group>"; };
+		5DBDDB771554759300B311BB /* refreshBGHome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refreshBGHome@2x.png"; path = "../../imgs/refreshBGHome@2x.png"; sourceTree = "<group>"; };
+		5DBDDB7A1554780100B311BB /* ActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicator.h; sourceTree = "<group>"; };
+		5DBDDB7B1554780100B311BB /* ActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicator.m; sourceTree = "<group>"; };
 		5DE7911015511D5900A181BD /* presentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = presentation.html; sourceTree = "<group>"; };
 		5DE7911615512BB100A181BD /* logo_atalante.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_atalante.png; path = ../../imgs/logo_atalante.png; sourceTree = "<group>"; };
 		5DE7911715512BB100A181BD /* logo_Bug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_Bug.png; path = ../../imgs/logo_Bug.png; sourceTree = "<group>"; };
@@ -213,6 +220,8 @@
 		5D5D3A7315500944001E3E5D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5DBDDB761554759300B311BB /* refreshBGHome.png */,
+				5DBDDB771554759300B311BB /* refreshBGHome@2x.png */,
 				5DE791281551352900A181BD /* programation@2x.png */,
 				5DE7911615512BB100A181BD /* logo_atalante.png */,
 				5DE7911715512BB100A181BD /* logo_Bug.png */,
@@ -259,6 +268,8 @@
 				5DE7913215513EDB00A181BD /* NavigationController.m */,
 				5DE791341551487800A181BD /* NavigationBar.h */,
 				5DE791351551487800A181BD /* NavigationBar.m */,
+				5DBDDB7A1554780100B311BB /* ActivityIndicator.h */,
+				5DBDDB7B1554780100B311BB /* ActivityIndicator.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -391,6 +402,8 @@
 				5DE7913015513A5400A181BD /* ArticleDetailViewController.xib in Resources */,
 				5D42C75E15533C9600B2783B /* EvenementDetailViewControllerViewController.xib in Resources */,
 				5D3C415F1554383C0007A374 /* Settings.plist in Resources */,
+				5DBDDB781554759300B311BB /* refreshBGHome.png in Resources */,
+				5DBDDB791554759300B311BB /* refreshBGHome@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +431,7 @@
 				5DBDDB6E1554416C00B311BB /* ExternalFeed.m in Sources */,
 				5DBDDB72155444AC00B311BB /* RSSPost.m in Sources */,
 				5DBDDB75155448D100B311BB /* RSSParser.m in Sources */,
+				5DBDDB7C1554780100B311BB /* ActivityIndicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

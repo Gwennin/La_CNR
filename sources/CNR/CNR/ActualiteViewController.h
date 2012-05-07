@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ActivityIndicator.h"
+@interface ActualiteViewController : UITableViewController {
+	
+	ActivityIndicator* loadView;
+}
 
-@interface ActualiteViewController : UITableViewController
+-(void)loadingData;
+-(void)reloadData;
 
 @end

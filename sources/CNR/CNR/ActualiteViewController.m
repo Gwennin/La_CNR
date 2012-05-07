@@ -8,6 +8,7 @@
 
 #import "ActualiteViewController.h"
 #import "ArticleDetailViewController.h"
+#import "ActivityIndicator.h"
 
 @interface ActualiteViewController ()
 
@@ -23,8 +24,28 @@
 		self.title = @"Actualités";
 		self.tabBarItem.image = [UIImage imageNamed:@"RSS.png"];
 		self.view.backgroundColor = [UIColor whiteColor];
+		
 	}
     return self;
+}
+
+-(void)loadingData {
+	
+	if (!loadView) {
+		loadView = [[ActivityIndicator alloc] initWithFrame:self.view.frame];
+		
+		[self.view addSubview:loadView];
+		[self.tableView setScrollEnabled:NO];
+	}
+}
+
+-(void)reloadData {
+	[loadView removeFromSuperview];
+	loadView = nil;
+	
+	[self.tableView setScrollEnabled:YES];
+	
+	[self.tableView reloadData];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -66,9 +87,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	ArticleDetailViewController* advc = [[ArticleDetailViewController alloc] initWithNibName:@"ArticleDetailViewController" bundle:nil];
+	[self loadingData];
+
+/*	ArticleDetailViewController* advc = [[ArticleDetailViewController alloc] initWithNibName:@"ArticleDetailViewController" bundle:nil];
 	
-	[self.navigationController pushViewController:advc animated:YES];
+	[self.navigationController pushViewController:advc animated:YES];*/
 }
 
 @end

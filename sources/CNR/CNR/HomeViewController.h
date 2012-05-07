@@ -12,6 +12,8 @@
 @interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     EventRepository* er;
+	
+	IBOutlet UIView* refreshView;
 }
 
 -(IBAction)goToTwitter:(id)sender;
