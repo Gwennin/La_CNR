@@ -67,6 +67,16 @@ static NSString* const RSSPostEntity = @"RSSPost";
 	return self;
 }
 
+- (NSManagedObjectContext*)managedObjectContext {
+    if (!_threadedContext) {
+        _threadedContext = [[NSManagedObjectContext alloc] init];
+        [_threadedContext setPersistentStoreCoordinator:[_mainContext persistentStoreCoordinator]];
+        [_threadedContext setMergePolicy:NSMergeByPropertyStoreTrumpMergePolicy];
+    }
+	
+    return _threadedContext;
+}
+
 -(NSEntityDescription*)getEventEntity {
 	return [NSEntityDescription entityForName:EventEntity inManagedObjectContext:self.managedObjectContext];
 }
@@ -111,12 +121,13 @@ static NSString* const RSSPostEntity = @"RSSPost";
 	NSString * name = [[NSThread currentThread] name];
 	
 	if ((name != nil) && [[threads allKeys] containsObject:name]) {
-		[[threads objectForKey:name] save];
 		[threads removeObjectForKey:name];
 	}
 }
 
 -(void)dealloc {
+	
+	[self save];
 	// on retire le thread courrant du tableau de threads
 	[ManageCoreData removeCurrentThread];
 }

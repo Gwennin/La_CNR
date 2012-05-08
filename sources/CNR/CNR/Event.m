@@ -10,7 +10,8 @@
 
 @implementation Event
 
-@synthesize idE, publishedAt, updatedAt, title, summary, content, date;
+@synthesize idE, publishedAt, updatedAt, title, summary, content;
+@dynamic date;
 
 - (NSDate*) date
 {

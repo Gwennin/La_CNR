@@ -20,10 +20,13 @@ static RSSParser* _singletone = nil;
 		if(self)
 		{
 			Settings* settings = [Settings sharedSettings];
+			mcd = [[ManageCoreData alloc] init];
 			
 			parseURL = [[NSURL alloc] initWithString:[settings rssURI]];
 			
 			[self parseXMLAtURL:parseURL];
+			
+			[mcd save];
 		}
 		return self;
 	}
@@ -44,7 +47,7 @@ static RSSParser* _singletone = nil;
 	posts = [[NSMutableArray alloc] init];
 	
 	[super parseXMLAtURL:url];
-	
+		
 	return self;
 }
 
@@ -52,7 +55,7 @@ static RSSParser* _singletone = nil;
 {
     if([elementName isEqualToString:@"item"])
     {
-        post = [[RSSPost alloc] init];
+        post = [[RSSPost alloc] initWithEntity:[mcd getRSSPostEntity] insertIntoManagedObjectContext:[mcd managedObjectContext]];
     }
 }
 

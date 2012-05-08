@@ -13,7 +13,7 @@
 	NSManagedObjectContext* _threadedContext;
 }
 
-@property (strong, readonly) NSManagedObjectContext* managedObjectContext;
+@property (atomic, strong, readonly) NSManagedObjectContext* managedObjectContext;
 
 
 -(id)init;

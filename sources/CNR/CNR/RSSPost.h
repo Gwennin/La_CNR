@@ -13,11 +13,11 @@
 
 @interface RSSPost : NSManagedObject
 
-@property (nonatomic, strong) NSString * title;
-@property (nonatomic, strong) NSString * link;
-@property (nonatomic, strong) NSDate * pubDate;
-@property (nonatomic, strong) NSString * postDescription;
-@property (nonatomic, strong) NSString * content;
-@property (nonatomic) BOOL * readed;
+@property (atomic, strong) NSString * title;
+@property (atomic, strong) NSString * link;
+@property (atomic, strong) NSDate * pubDate;
+@property (atomic, strong) NSString * postDescription;
+@property (atomic, strong) NSString * content;
+@property (atomic) BOOL * readed;
 
 @end

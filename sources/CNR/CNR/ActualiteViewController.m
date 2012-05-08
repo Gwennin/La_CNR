@@ -9,6 +9,7 @@
 #import "ActualiteViewController.h"
 #import "ArticleDetailViewController.h"
 #import "ActivityIndicator.h"
+#import "ManageApp.h"
 
 @interface ActualiteViewController ()
 
@@ -20,6 +21,13 @@
 {
     self = [super initWithStyle:style];
     if (self) {
+				
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(loadingData)
+													 name:@"RSSLoading" object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(reloadData)
+													 name:@"RSSLoadEnding" object:nil];
 		
 		self.title = @"Actualités";
 		self.tabBarItem.image = [UIImage imageNamed:@"RSS.png"];
@@ -27,6 +35,15 @@
 		
 	}
     return self;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+	
+	[super viewWillAppear:animated];
+	
+	
+	ManageApp* appManager = [[ManageApp alloc] init];
+	[appManager loadRSSPosts];
 }
 
 -(void)loadingData {

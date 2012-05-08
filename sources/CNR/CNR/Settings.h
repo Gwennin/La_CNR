@@ -10,12 +10,12 @@
 
 @interface Settings : NSObject
 
-@property (nonatomic, strong, readonly) NSString* cantineURI;
-@property (nonatomic, strong, readonly) NSString* facebookURI;
-@property (nonatomic, strong, readonly) NSString* twitterURI;
-@property (nonatomic, strong, readonly) NSString* eventURI;
-@property (nonatomic, strong, readonly) NSString* rssURI;
-@property (nonatomic, strong, readonly) NSString* settingsVersion;
+@property (atomic, strong, readonly) NSString* cantineURI;
+@property (atomic, strong, readonly) NSString* facebookURI;
+@property (atomic, strong, readonly) NSString* twitterURI;
+@property (atomic, strong, readonly) NSString* eventURI;
+@property (atomic, strong, readonly) NSString* rssURI;
+@property (atomic, strong, readonly) NSString* settingsVersion;
 
 +(Settings*)sharedSettings;
 

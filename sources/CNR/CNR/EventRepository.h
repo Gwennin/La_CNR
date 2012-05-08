@@ -19,7 +19,7 @@
     NSArray* uniqueDates;
 }
 
-@property (nonatomic) NSMutableArray* events;
+@property (atomic) NSMutableArray* events;
 
 + (EventRepository*) sharedEventRepository;
 - (NSString*) titleForHeaderInSection:(NSInteger) section;

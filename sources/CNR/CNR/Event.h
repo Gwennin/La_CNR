@@ -20,13 +20,13 @@
     NSDate* date;
 }
 
-@property (nonatomic, retain) NSString * idE;
-@property (nonatomic, retain) NSDate * publishedAt;
-@property (nonatomic, retain) NSDate * updatedAt;
-@property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSString * summary;
-@property (nonatomic, retain) NSString  * content;
-@property (nonatomic, retain) NSDate* date;
+@property (atomic, retain) NSString * idE;
+@property (atomic, retain) NSDate * publishedAt;
+@property (atomic, retain) NSDate * updatedAt;
+@property (atomic, retain) NSString * title;
+@property (atomic, retain) NSString * summary;
+@property (atomic, retain) NSString  * content;
+@property (atomic, retain) NSDate* date;
 
 - (id) init;
 

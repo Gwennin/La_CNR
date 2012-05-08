@@ -20,10 +20,16 @@
     self = [super initWithStyle:style];
     if (self) {
 		
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(loadingData)
+													 name:@"EventLoading" object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(reloadData)
+													 name:@"EventLoadEnding" object:nil];
+		
 		self.title = @"Programmation";
 		self.tabBarItem.image = [UIImage imageNamed:@"programation.png"];
 		self.view.backgroundColor = [UIColor whiteColor];
-        //er = [EventRepository sharedEventRepository];
 	}
     return self;
 }

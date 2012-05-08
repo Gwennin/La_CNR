@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ManageCoreData.h"
 
 @interface ExternalFeed : NSObject <NSXMLParserDelegate> {
 	
 	NSURL* parseURL;
+	ManageCoreData* mcd;
 }
 
 -(id)parseXMLAtURL:(NSURL *)url;

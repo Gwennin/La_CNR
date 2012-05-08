@@ -40,6 +40,7 @@
 		5DB747CF155923B200BBA717 /* CNR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5DB747CD155923B200BBA717 /* CNR.xcdatamodeld */; };
 		5DB747D61559258100BBA717 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB747D51559258100BBA717 /* CoreData.framework */; };
 		5DB747D9155926A400BBA717 /* ManageCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB747D8155926A400BBA717 /* ManageCoreData.m */; };
+		5DB747E015596DF400BBA717 /* ManageApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB747DF15596DF400BBA717 /* ManageApp.m */; };
 		5DBDDB6E1554416C00B311BB /* ExternalFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB6D1554416C00B311BB /* ExternalFeed.m */; };
 		5DBDDB72155444AC00B311BB /* RSSPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB71155444AC00B311BB /* RSSPost.m */; };
 		5DBDDB75155448D100B311BB /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB74155448D100B311BB /* RSSParser.m */; };
@@ -111,6 +112,8 @@
 		5DB747D51559258100BBA717 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		5DB747D7155926A400BBA717 /* ManageCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageCoreData.h; sourceTree = "<group>"; };
 		5DB747D8155926A400BBA717 /* ManageCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageCoreData.m; sourceTree = "<group>"; };
+		5DB747DE15596DF400BBA717 /* ManageApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageApp.h; sourceTree = "<group>"; };
+		5DB747DF15596DF400BBA717 /* ManageApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageApp.m; sourceTree = "<group>"; };
 		5DBDDB6C1554416C00B311BB /* ExternalFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExternalFeed.h; sourceTree = "<group>"; };
 		5DBDDB6D1554416C00B311BB /* ExternalFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExternalFeed.m; sourceTree = "<group>"; };
 		5DBDDB70155444AC00B311BB /* RSSPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSPost.h; sourceTree = "<group>"; };
@@ -330,6 +333,8 @@
 				5DBDDB74155448D100B311BB /* RSSParser.m */,
 				5DB747D7155926A400BBA717 /* ManageCoreData.h */,
 				5DB747D8155926A400BBA717 /* ManageCoreData.m */,
+				5DB747DE15596DF400BBA717 /* ManageApp.h */,
+				5DB747DF15596DF400BBA717 /* ManageApp.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -446,6 +451,7 @@
 				5DBDDB7C1554780100B311BB /* ActivityIndicator.m in Sources */,
 				5DB747CF155923B200BBA717 /* CNR.xcdatamodeld in Sources */,
 				5DB747D9155926A400BBA717 /* ManageCoreData.m in Sources */,
+				5DB747E015596DF400BBA717 /* ManageApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

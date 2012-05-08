@@ -28,6 +28,7 @@
 		if(self)
 		{
 			Settings* settings = [Settings sharedSettings];
+			mcd = [[ManageCoreData alloc] init];
 			
             uniqueDates = nil;
 			parseURL = [[NSURL alloc] initWithString:[settings eventURI]];
@@ -35,6 +36,8 @@
 			[self parseXMLAtURL:parseURL];
             [self deleteOldEvent];
 			[self orderByDateAsc];
+			
+			[mcd save];
 		}
 		return self;
 	}
@@ -69,7 +72,7 @@ static EventRepository* __sharedEventRepository = nil;
 {
     if([elementName isEqualToString:@"entry"])
     {
-        event = [[Event alloc] init];
+		event = [[Event alloc] initWithEntity:[mcd getEventEntity] insertIntoManagedObjectContext:[mcd managedObjectContext]];
     }
 }
 
