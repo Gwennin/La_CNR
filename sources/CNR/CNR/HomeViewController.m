@@ -21,6 +21,8 @@
 		
 		self.title = @"Accueil";
 		self.tabBarItem.image = [UIImage imageNamed:@"HomeButton.png"];
+		
+		
         //er = [EventRepository sharedEventRepository];
 		//[NSThread detachNewThreadSelector:@selector(sharedEventRepository) toTarget:[EventRepository class] withObject:nil];
     }

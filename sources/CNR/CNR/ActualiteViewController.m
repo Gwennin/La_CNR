@@ -87,11 +87,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	[self loadingData];
 
-/*	ArticleDetailViewController* advc = [[ArticleDetailViewController alloc] initWithNibName:@"ArticleDetailViewController" bundle:nil];
+	ArticleDetailViewController* advc = [[ArticleDetailViewController alloc] initWithNibName:@"ArticleDetailViewController" bundle:nil];
 	
-	[self.navigationController pushViewController:advc animated:YES];*/
+	[self.navigationController pushViewController:advc animated:YES];
 }
 
 @end

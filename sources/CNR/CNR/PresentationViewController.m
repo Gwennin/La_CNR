@@ -46,8 +46,13 @@
 }
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+	
+	if (![[request URL] host]) {
+		return YES;
+	}
+	
     [[UIApplication sharedApplication] openURL:request.URL];
-    return YES;
+    return NO;
 }
 
 @end

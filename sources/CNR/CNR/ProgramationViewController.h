@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "EventRepository.h"
+#import "ActivityIndicator.h"
 
 @interface ProgramationViewController : UITableViewController
 {
     EventRepository* er;
+	
+	ActivityIndicator* loadView;
 }
 
 @end

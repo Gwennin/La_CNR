@@ -59,7 +59,7 @@
 																 delegate:self 
 														cancelButtonTitle:@"Annuler"
 												   destructiveButtonTitle:nil
-														otherButtonTitles:@"Envoyer par e-mail", @"Twitter l'article", @"Ouvrir Dans Safari", nil];
+														otherButtonTitles:@"Envoyer par e-mail", @"Tweeter l'article", @"Ouvrir Dans Safari", nil];
 	} else {
 		actionSheet = [[UIActionSheet alloc] initWithTitle:[self.navigationItem title]
 																 delegate:self 

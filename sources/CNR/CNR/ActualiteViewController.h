@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ActivityIndicator.h"
+
 @interface ActualiteViewController : UITableViewController {
 	
 	ActivityIndicator* loadView;

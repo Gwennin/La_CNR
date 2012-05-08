@@ -23,7 +23,7 @@
 		self.title = @"Programmation";
 		self.tabBarItem.image = [UIImage imageNamed:@"programation.png"];
 		self.view.backgroundColor = [UIColor whiteColor];
-        er = [EventRepository sharedEventRepository];
+        //er = [EventRepository sharedEventRepository];
 	}
     return self;
 }
@@ -31,6 +31,25 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void)loadingData {
+	
+	if (!loadView) {
+		loadView = [[ActivityIndicator alloc] initWithFrame:self.view.frame];
+		
+		[self.view addSubview:loadView];
+		[self.tableView setScrollEnabled:NO];
+	}
+}
+
+-(void)reloadData {
+	[loadView removeFromSuperview];
+	loadView = nil;
+	
+	[self.tableView setScrollEnabled:YES];
+	
+	[self.tableView reloadData];
 }
 
 #pragma mark - Table view data source

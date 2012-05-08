@@ -15,19 +15,34 @@
     self = [super initWithFrame:frame];
     if (self) {
 		
-		[self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.3]];
+		[self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.6]];
 		
-		CGRect rectForLabel = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+		CGSize labelSize = [@"Actualisation en cours" sizeWithFont:[UIFont systemFontOfSize:17]];
+		CGRect rectForLabel = CGRectMake((self.frame.size.width / 2) - (labelSize.width / 2),
+										 (self.frame.size.height / 2) - (labelSize.height / 2) - 20,
+										 labelSize.width,
+										 labelSize.height);
+		
 		UILabel* label = [[UILabel alloc] initWithFrame:rectForLabel];
 		label.text = @"Actualisation en cours";
+		label.textColor = [UIColor whiteColor];
 		label.backgroundColor = [UIColor clearColor];
-		la
+		label.shadowColor = [UIColor lightGrayColor];
+		label.shadowOffset = CGSizeMake(0, -1);
 		
-		CGRect rectForActivityIndicator = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-		UIActivityIndicatorView* activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:rectForActivityIndicator];
+		//la
+		
+		CGRect rectForActivityIndicator = CGRectMake((self.frame.size.width / 2) - 18.5,
+															(self.frame.size.height / 2) + 1.5,
+															37,
+															37);
+		UIActivityIndicatorView* activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+		[activityIndicator setFrame:rectForActivityIndicator];
+		[activityIndicator startAnimating];
+		[activityIndicator setHidden:NO];
 		
 		[self addSubview:label];
-		//[self addSubview:activityIndicator];
+		[self addSubview:activityIndicator];
     }
     return self;
 }
