@@ -144,7 +144,6 @@ static EventRepository* __sharedEventRepository = nil;
         {
             if([[[events objectAtIndex:i] date] compare:today] == NSOrderedAscending)
             {
-                NSLog(@"delete %i", i);
                 [events removeObjectAtIndex:i];
                 clean = NO;
             }
@@ -154,18 +153,18 @@ static EventRepository* __sharedEventRepository = nil;
 
 - (NSArray*) deleteDuplicatedDates
 {
-        NSArray* dates = [events valueForKey:@"date"];
-        NSMutableArray* uDates = [[NSMutableArray alloc] initWithArray:dates];
-        
-        NSInteger index = [dates count] - 1;
-        for(NSDate* d in dates)
+    NSArray* dates = [events valueForKey:@"date"];
+    NSMutableArray* uDates = [[NSMutableArray alloc] initWithArray:dates];
+    
+    NSInteger index = [dates count] - 1;
+    for(NSDate* d in dates)
+    {
+        if([uDates indexOfObject:d inRange:NSMakeRange(0, index)] != NSNotFound)
         {
-            if([uDates indexOfObject:d inRange:NSMakeRange(0, index)] != NSNotFound)
-            {
-                [uDates removeObjectAtIndex:index];
-            }
-            index--;
+            [uDates removeObjectAtIndex:index];
         }
+        index--;
+    }
     return  [NSArray arrayWithArray:uDates];
 }
 
