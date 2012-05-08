@@ -73,18 +73,64 @@
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-}
-*/
+#pragma mark -
+#pragma mark Core Data stack
 
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
+- (NSManagedObjectContext *)managedObjectContext
 {
+    if (managedObjectContext_ != nil) {
+        return managedObjectContext_;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (coordinator != nil) {
+        managedObjectContext_ = [[NSManagedObjectContext alloc] init];
+        [managedObjectContext_ setPersistentStoreCoordinator:coordinator];
+    }
+    return managedObjectContext_;
 }
-*/
+
+- (NSManagedObjectModel *)managedObjectModel
+{
+    if (managedObjectModel_ != nil) {
+        return managedObjectModel_;
+    }
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CNR" withExtension:@"momd"];
+    managedObjectModel_ = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return managedObjectModel_;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+{
+    if (persistentStoreCoordinator_ != nil)
+    {
+        return persistentStoreCoordinator_;
+    }
+    
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CNR.sqlite"];
+    
+    NSMutableDictionary* pragmaOptions = [NSMutableDictionary dictionary];
+	[pragmaOptions setObject:@"FULL" forKey:@"synchronous"];
+	[pragmaOptions setObject:@"1" forKey:@"fullfsync"];
+	
+	NSDictionary *storeOptions = [NSDictionary dictionaryWithObject:pragmaOptions forKey:NSSQLitePragmasOption];
+    
+    NSError *error = nil;
+    persistentStoreCoordinator_ = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    if (![persistentStoreCoordinator_ addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:storeOptions error:&error])
+    {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }    
+    
+    return persistentStoreCoordinator_;
+}
+
+#pragma mark -
+#pragma mark Application's Documents directory
+
+- (NSURL *)applicationDocumentsDirectory {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
 
 @end

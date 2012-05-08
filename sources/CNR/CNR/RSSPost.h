@@ -7,14 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
 #import "ExternalFeed.h"
 
-@interface RSSPost : NSObject
+@interface RSSPost : NSManagedObject
 
 @property (nonatomic, strong) NSString * title;
 @property (nonatomic, strong) NSString * link;
 @property (nonatomic, strong) NSDate * pubDate;
-@property (nonatomic, strong) NSString * description;
+@property (nonatomic, strong) NSString * postDescription;
 @property (nonatomic, strong) NSString * content;
 @property (nonatomic) BOOL * readed;
 

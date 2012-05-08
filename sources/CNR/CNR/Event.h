@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Event : NSObject
+@interface Event : NSManagedObject
 {
     NSString * idE;
     NSDate * publishedAt;

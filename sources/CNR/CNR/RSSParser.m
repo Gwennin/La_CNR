@@ -76,7 +76,7 @@ static RSSParser* _singletone = nil;
     }
 	else if([elementName isEqualToString:@"description"])
     {
-        [post setDescription:currentNodeValue];
+        [post setPostDescription:currentNodeValue];
     }
     else if([elementName isEqualToString:@"content:encoded"])
     {

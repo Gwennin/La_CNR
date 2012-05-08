@@ -37,6 +37,9 @@
 		5D5D3AD515507D6B001E3E5D /* twitter-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AD315507D6B001E3E5D /* twitter-logo.jpg */; };
 		5D5D3AD8155084F7001E3E5D /* BGTabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AD6155084F7001E3E5D /* BGTabBar.png */; };
 		5D5D3AD9155084F7001E3E5D /* BGTabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D3AD7155084F7001E3E5D /* BGTabBar@2x.png */; };
+		5DB747CF155923B200BBA717 /* CNR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5DB747CD155923B200BBA717 /* CNR.xcdatamodeld */; };
+		5DB747D61559258100BBA717 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB747D51559258100BBA717 /* CoreData.framework */; };
+		5DB747D9155926A400BBA717 /* ManageCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB747D8155926A400BBA717 /* ManageCoreData.m */; };
 		5DBDDB6E1554416C00B311BB /* ExternalFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB6D1554416C00B311BB /* ExternalFeed.m */; };
 		5DBDDB72155444AC00B311BB /* RSSPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB71155444AC00B311BB /* RSSPost.m */; };
 		5DBDDB75155448D100B311BB /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB74155448D100B311BB /* RSSParser.m */; };
@@ -104,6 +107,10 @@
 		5D5D3AD315507D6B001E3E5D /* twitter-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "twitter-logo.jpg"; path = "../../imgs/twitter-logo.jpg"; sourceTree = "<group>"; };
 		5D5D3AD6155084F7001E3E5D /* BGTabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BGTabBar.png; path = ../../imgs/BGTabBar.png; sourceTree = "<group>"; };
 		5D5D3AD7155084F7001E3E5D /* BGTabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BGTabBar@2x.png"; path = "../../imgs/BGTabBar@2x.png"; sourceTree = "<group>"; };
+		5DB747CE155923B200BBA717 /* CNR.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CNR.xcdatamodel; sourceTree = "<group>"; };
+		5DB747D51559258100BBA717 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5DB747D7155926A400BBA717 /* ManageCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageCoreData.h; sourceTree = "<group>"; };
+		5DB747D8155926A400BBA717 /* ManageCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageCoreData.m; sourceTree = "<group>"; };
 		5DBDDB6C1554416C00B311BB /* ExternalFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExternalFeed.h; sourceTree = "<group>"; };
 		5DBDDB6D1554416C00B311BB /* ExternalFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExternalFeed.m; sourceTree = "<group>"; };
 		5DBDDB70155444AC00B311BB /* RSSPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSPost.h; sourceTree = "<group>"; };
@@ -143,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DB747D61559258100BBA717 /* CoreData.framework in Frameworks */,
 				5D42C75915533B0000B2783B /* MessageUI.framework in Frameworks */,
 				5D42C7561553392D00B2783B /* Twitter.framework in Frameworks */,
 				5D5D3A2A15500098001E3E5D /* UIKit.framework in Frameworks */,
@@ -158,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				5D3C415E1554383C0007A374 /* Settings.plist */,
+				5DB747CD155923B200BBA717 /* CNR.xcdatamodeld */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 		5D5D3A2815500098001E3E5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5DB747D51559258100BBA717 /* CoreData.framework */,
 				5D42C75815533B0000B2783B /* MessageUI.framework */,
 				5D42C7551553392D00B2783B /* Twitter.framework */,
 				5D5D3A2915500098001E3E5D /* UIKit.framework */,
@@ -318,6 +328,8 @@
 				5DBDDB71155444AC00B311BB /* RSSPost.m */,
 				5DBDDB73155448D100B311BB /* RSSParser.h */,
 				5DBDDB74155448D100B311BB /* RSSParser.m */,
+				5DB747D7155926A400BBA717 /* ManageCoreData.h */,
+				5DB747D8155926A400BBA717 /* ManageCoreData.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -432,6 +444,8 @@
 				5DBDDB72155444AC00B311BB /* RSSPost.m in Sources */,
 				5DBDDB75155448D100B311BB /* RSSParser.m in Sources */,
 				5DBDDB7C1554780100B311BB /* ActivityIndicator.m in Sources */,
+				5DB747CF155923B200BBA717 /* CNR.xcdatamodeld in Sources */,
+				5DB747D9155926A400BBA717 /* ManageCoreData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +558,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5DB747CD155923B200BBA717 /* CNR.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5DB747CE155923B200BBA717 /* CNR.xcdatamodel */,
+			);
+			currentVersion = 5DB747CE155923B200BBA717 /* CNR.xcdatamodel */;
+			path = CNR.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5D5D3A1C15500098001E3E5D /* Project object */;
 }

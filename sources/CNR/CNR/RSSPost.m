@@ -10,7 +10,7 @@
 
 @implementation RSSPost
 
-@synthesize title, pubDate, link, description, content, readed;
+@synthesize title, pubDate, link, postDescription, content, readed;
 
 -(id)init {
 	
