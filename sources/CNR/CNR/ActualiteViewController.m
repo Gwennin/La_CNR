@@ -10,6 +10,7 @@
 #import "ArticleDetailViewController.h"
 #import "ActivityIndicator.h"
 #import "ManageApp.h"
+#import "RSSPost.h"
 
 @interface ActualiteViewController ()
 
@@ -22,9 +23,6 @@
     self = [super initWithStyle:style];
     if (self) {
 				
-		[[NSNotificationCenter defaultCenter] addObserver:self
-												 selector:@selector(loadingData)
-													 name:@"RSSLoading" object:nil];
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(reloadData)
 													 name:@"RSSLoadEnding" object:nil];
@@ -41,27 +39,14 @@
 	
 	[super viewWillAppear:animated];
 	
+	[self reloadData];
 	
 	ManageApp* appManager = [[ManageApp alloc] init];
 	[appManager loadRSSPosts];
 }
 
--(void)loadingData {
-	
-	if (!loadView) {
-		loadView = [[ActivityIndicator alloc] initWithFrame:self.view.frame];
-		
-		[self.view addSubview:loadView];
-		[self.tableView setScrollEnabled:NO];
-	}
-}
-
--(void)reloadData {
-	[loadView removeFromSuperview];
-	loadView = nil;
-	
-	[self.tableView setScrollEnabled:YES];
-	
+-(void)reloadData {	
+	data = [RSSPost loadFromCoreData];
 	[self.tableView reloadData];
 }
 
@@ -74,16 +59,20 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 10;
+    return [data count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return [[data objectAtIndex:section] count];
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return [NSString stringWithFormat:@"Mardi %i mai 2012", section * 7 + 1];
+	NSDateFormatter* df = [[NSDateFormatter alloc] init];
+	df.locale = [NSLocale currentLocale];
+	df.dateFormat = @"EEEE, dd MMMM yyyy";
+	
+	return [df stringFromDate:[[[data objectAtIndex:section] objectAtIndex:0] pubDate]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -95,8 +84,7 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
     
-	cell.textLabel.text = [NSString stringWithFormat:@"Actualité n°%i", indexPath.row + (indexPath.section * 2) + 1];
-	cell.imageView.image = [UIImage imageNamed:@"second.png"];
+	cell.textLabel.text = [[[data objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] title];
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
     return cell;
@@ -106,6 +94,7 @@
 {
 
 	ArticleDetailViewController* advc = [[ArticleDetailViewController alloc] initWithNibName:@"ArticleDetailViewController" bundle:nil];
+	[advc setPost:[[data objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
 	
 	[self.navigationController pushViewController:advc animated:YES];
 }

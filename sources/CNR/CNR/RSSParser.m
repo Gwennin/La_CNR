@@ -75,7 +75,7 @@ static RSSParser* _singletone = nil;
         [df setDateFormat:@"eee, dd MMM yyyy HH:mm:ss ZZZZ"];
 		[df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
 		
-        [post setPubDate:[df dateFromString:@"Sun, 03 May 2009 19:58:58 -0700"]];
+        [post setPubDate:[df dateFromString:currentNodeValue]];
     }
 	else if([elementName isEqualToString:@"description"])
     {
@@ -85,11 +85,15 @@ static RSSParser* _singletone = nil;
     {
         [post setContent:currentNodeValue];
     }
-    else if([elementName isEqualToString:@"item"] && post)
+    else if([elementName isEqualToString:@"item"] && post && ![RSSPost isInCoreData:post])
     {
         [posts addObject:post];
         post = nil;
     }
+	else if ([elementName isEqualToString:@"item"] && post && [RSSPost isInCoreData:post]) {
+		[[mcd managedObjectContext] deleteObject:post];
+		post = nil;
+	}
     currentNodeValue = nil;
 }
 

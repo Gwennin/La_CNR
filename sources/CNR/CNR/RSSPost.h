@@ -20,4 +20,7 @@
 @property (atomic, strong) NSString * content;
 @property (atomic) BOOL * readed;
 
++(NSArray*)loadFromCoreData;
++(BOOL)isInCoreData:(RSSPost*)post;
+
 @end

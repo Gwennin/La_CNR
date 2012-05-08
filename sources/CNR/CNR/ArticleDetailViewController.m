@@ -15,6 +15,8 @@
 
 @implementation ArticleDetailViewController
 
+@synthesize post;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,10 +38,28 @@
     return self;
 }
 
--(void)viewDidAppear:(BOOL)animated {
-	[super viewDidAppear:animated];
+-(void)viewDidLoad {
+	[super viewDidLoad];
 	
-	scrollView.contentSize = CGSizeMake(320, 1050);
+	titleView.text = [post title];
+	
+	NSDateFormatter* df = [[NSDateFormatter alloc] init];
+	df.locale = [NSLocale currentLocale];
+	df.dateFormat = @"EEEE, dd MMMM yyyy à HH:mm";
+	
+	dateView.text = [df stringFromDate:[post pubDate]];
+	
+	[contentView loadHTMLString:[post content] baseURL:nil];
+	
+	[contentView setBackgroundColor:[UIColor whiteColor]];
+	
+	for (id subview in contentView.subviews)
+		if ([[subview class] isSubclassOfClass: [UIScrollView class]]) {
+			((UIScrollView *)subview).bounces = NO;
+			((UIScrollView *)subview).showsHorizontalScrollIndicator = NO;
+		}
+	
+	[contentView setDelegate:self];
 	
 	UIBarButtonItem* actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonPressed:)];
 	self.navigationItem.rightBarButtonItem = actionButton;
@@ -105,6 +125,16 @@
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
 	
 	[controller dismissModalViewControllerAnimated:YES];
+}
+
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+	
+	if (![[request URL] host]) {
+		return YES;
+	}
+	
+    [[UIApplication sharedApplication] openURL:request.URL];
+    return NO;
 }
 
 @end
