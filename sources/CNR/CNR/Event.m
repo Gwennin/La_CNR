@@ -12,15 +12,15 @@
 @implementation Event
 
 @synthesize idE, publishedAt, updatedAt, title, summary, content;
-@dynamic date;
+@synthesize date;
 
-- (NSDate*) date
+/*- (NSDate*) date
 {
     if(!date)
         date = [self dateFromSummary];
     
     return date;
-}
+}*/
 
 - (id)init
 {
@@ -162,7 +162,11 @@
 	[request setFetchLimit:3];
 	
 	NSDate* today = [NSDate date];
+	NSPredicate* predicate = [NSPredicate predicateWithFormat:@"(date >= %@)", today];
 	
+	NSLog(@"%@", predicate);
+	
+	[request setPredicate:predicate];
 	
 	NSError* error = nil;
 	NSMutableArray* result = [[[mcd managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
@@ -172,39 +176,7 @@
 	
 	[result sortUsingDescriptors:[NSArray arrayWithObjects:sortDescDate, sortDescTitle, nil]];
 	
-	NSMutableArray* events = [NSMutableArray array];
-	Event* lastObj = nil;
-	if ([result count]) {
-		lastObj = [result objectAtIndex:0];
-		[events addObject:[NSMutableArray arrayWithObject:lastObj]];
-	}
-	int currentIndex = 0;
-	
-	for (int i = 1; i < [result count]; i++) {
-		
-		Event* currentObj = [result objectAtIndex:i];
-		
-		NSCalendar *cal = [NSCalendar currentCalendar];
-		NSDateComponents* components = [[NSCalendar currentCalendar] components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
-																	   fromDate:[currentObj date]];
-		NSDate* currentObjDate = [cal dateFromComponents:components];
-		
-		components = [[NSCalendar currentCalendar] components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
-													 fromDate:[lastObj date]];
-		NSDate* lastObjDate = [cal dateFromComponents:components];
-		
-		if ([currentObjDate isEqualToDate:lastObjDate]) {
-			[[events objectAtIndex:currentIndex] addObject:currentObj];
-		}
-		else {
-			[events addObject:[NSMutableArray arrayWithObject:currentObj]];
-			currentIndex++;
-		}
-		
-		lastObj = currentObj;
-	}
-	
-	return events;
+	return result;
 }
 
 @end

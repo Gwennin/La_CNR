@@ -45,6 +45,12 @@
 	
 	UIBarButtonItem* actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonPressed:)];
 	self.navigationItem.rightBarButtonItem = actionButton;
+	
+	if (event) {
+		eventTitle.text = event.title;
+		date.text = event.date.description;
+		text.text = event.content;
+	}
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

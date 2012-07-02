@@ -40,9 +40,6 @@
 	[super viewWillAppear:animated];
 	
 	[self reloadData];
-	
-	ManageApp* appManager = [[ManageApp alloc] init];
-	[appManager loadRSSPosts];
 }
 
 -(void)reloadData {	

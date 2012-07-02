@@ -25,11 +25,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-	ManageApp* appManager = [[ManageApp alloc] init];
-	[appManager loadEvents];
-	
-	[self managedObjectModel];
+	[self managedObjectContext];
 	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
@@ -44,6 +40,11 @@
 	
 	self.window.rootViewController = self.mainController;
     [self.window makeKeyAndVisible];
+	
+	ManageApp* appManager = [[ManageApp alloc] init];
+	[appManager loadEvents];
+	[appManager loadRSSPosts];
+	
     return YES;
 }
 

@@ -22,10 +22,10 @@
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(loadingData)
-													 name:@"EventLoading" object:nil];
+													 name:@"EventsLoading" object:nil];
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(reloadData)
-													 name:@"EventLoadEnding" object:nil];
+													 name:@"EventsLoadEnding" object:nil];
 		
 		self.title = @"Programmation";
 		self.tabBarItem.image = [UIImage imageNamed:@"programation.png"];
@@ -52,7 +52,11 @@
 }
 
 -(void)reloadData {	
+	
+	NSLog(@"ReloadData Programmation");
+	
 	data = [Event loadFromCoreData];
+	
 	[self.tableView reloadData];
 }
 #pragma mark - Table view data source

@@ -12,6 +12,10 @@
 
 @interface EvenementDetailViewControllerViewController : UIViewController <UIActionSheetDelegate, MFMailComposeViewControllerDelegate> {
 	IBOutlet UIScrollView* scrollView;
+	
+	IBOutlet UILabel* text;
+	IBOutlet UILabel * eventTitle;
+	IBOutlet UILabel * date;
 }
 
 @property (nonatomic, strong) Event * event;

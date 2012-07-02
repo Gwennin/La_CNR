@@ -11,12 +11,18 @@
 
 @interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
-    EventRepository* er;
+    //EventRepository* er;
+	
+	NSArray* eventsArray;
 	
 	IBOutlet UIView* refreshView;
+	
+	IBOutlet UITableView* _tableView;
 }
 
 -(IBAction)goToTwitter:(id)sender;
 -(IBAction)goToFacebook:(id)sender;
+
+-(void)reloadData;
 
 @end

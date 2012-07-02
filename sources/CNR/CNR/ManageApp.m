@@ -34,10 +34,13 @@
 		if (![[NSThread currentThread] isMainThread]) {
 			[[NSThread currentThread] setName:@"Events"];
 			
+			NSLog(@"EventsLoading");
 			[[NSNotificationCenter defaultCenter] postNotificationName:@"EventsLoading" object:nil];
 
 			[EventRepository sharedEventRepository];
-			
+
+			NSLog(@"EventsLoadEnding");
+
 			[[NSNotificationCenter defaultCenter] postNotificationName:@"EventsLoadEnding" object:nil];
 		}
 	}
