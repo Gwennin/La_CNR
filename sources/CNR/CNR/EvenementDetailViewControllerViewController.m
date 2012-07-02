@@ -15,6 +15,8 @@
 
 @implementation EvenementDetailViewControllerViewController
 
+@synthesize event;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -76,7 +78,7 @@
 	
 	switch (buttonIndex) {
 		case 0:
-			//Petit bug de compillation, corrigéavec un if true
+			//Petit bug de compillation, corrigé avec un if true
 			if (TRUE) {
 				NSDate * now = [NSDate date];	
 				// date & heure dans 5 s

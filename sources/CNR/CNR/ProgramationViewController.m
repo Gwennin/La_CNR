@@ -30,6 +30,8 @@
 		self.title = @"Programmation";
 		self.tabBarItem.image = [UIImage imageNamed:@"programation.png"];
 		self.view.backgroundColor = [UIColor whiteColor];
+		
+		[self reloadData];
 	}
     return self;
 }
@@ -41,37 +43,36 @@
 
 -(void)loadingData {
 	
-	if (!loadView) {
+	/*if (!loadView) {
 		loadView = [[ActivityIndicator alloc] initWithFrame:self.view.frame];
 		
 		[self.view addSubview:loadView];
 		[self.tableView setScrollEnabled:NO];
-	}
+	}*/
 }
 
--(void)reloadData {
-	[loadView removeFromSuperview];
-	loadView = nil;
-	
-	[self.tableView setScrollEnabled:YES];
-	
+-(void)reloadData {	
+	data = [Event loadFromCoreData];
 	[self.tableView reloadData];
 }
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[er uniqueDates] count];
+    return [data count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return [[data objectAtIndex:section] count];
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return [NSString stringWithFormat:@"%@", [er titleForHeaderInSection:section]];
+	NSDateFormatter* df = [[NSDateFormatter alloc] init];
+	df.locale = [NSLocale currentLocale];
+	df.dateFormat = @"EEEE, dd MMMM yyyy";
+	
+	return [df stringFromDate:[[[data objectAtIndex:section] objectAtIndex:0] date]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -83,7 +84,13 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
     
-	cell.textLabel.text = [NSString stringWithFormat:@"Programation n°%i", indexPath.row + (indexPath.section * 2) + 1];
+	if ([[[[data objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] title] length] != 0) {
+		cell.textLabel.text = [[[data objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] title];
+	}
+	else {
+		cell.textLabel.text = @"Aucun titre";
+	}
+	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
     return cell;
@@ -92,7 +99,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	EvenementDetailViewControllerViewController* edvc = [[EvenementDetailViewControllerViewController alloc] initWithNibName:@"EvenementDetailViewControllerViewController" bundle:nil];
-	
+	[edvc setEvent:[[data objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
+
 	[self.navigationController pushViewController:edvc animated:YES];
 }
 

@@ -19,6 +19,8 @@ static RSSParser* _singletone = nil;
 		self = [super init];
 		if(self)
 		{
+			[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+			
 			Settings* settings = [Settings sharedSettings];
 			mcd = [[ManageCoreData alloc] init];
 			
@@ -27,6 +29,8 @@ static RSSParser* _singletone = nil;
 			[self parseXMLAtURL:parseURL];
 			
 			[mcd save];
+			
+			[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 		}
 		return self;
 	}

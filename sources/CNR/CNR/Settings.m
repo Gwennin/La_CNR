@@ -78,25 +78,23 @@ static Settings* _singletone = nil;
 	// On récupère le chemin du fichier Settings.plist
 	NSString* path = [[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"plist"];
 	
-	// Si le fichier Document/Settings.plist n'existe pas on récupère les settings dans le Settings.plist contenu dans le .app
-	if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
-		NSLog(@"Failed to update Settings");
-	}
-	
-	// on recupère le contenu du plist
-	NSDictionary* plistSettingsfile = [[NSDictionary alloc] initWithContentsOfFile:path];
-	
-	NSString* bundleAppSettingsVersion = [plistSettingsfile objectForKey:@"settingsVersion"];
-	
-	if (![bundleAppSettingsVersion isEqualToString:settingsVersion]) {
+	if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
 		
-		// on met à jours les settings en readonly seulement
-		cantineURI = [plistSettingsfile objectForKey:@"cantineURI"];
-		facebookURI = [plistSettingsfile objectForKey:@"facebookURI"];
-		twitterURI = [plistSettingsfile objectForKey:@"twitterURI"];
-		eventURI = [plistSettingsfile objectForKey:@"eventURI"];
-		rssURI = [plistSettingsfile objectForKey:@"rssURI"];
-		settingsVersion = [plistSettingsfile objectForKey:@"settingsVersion"];
+		// on recupère le contenu du plist
+		NSDictionary* plistSettingsfile = [[NSDictionary alloc] initWithContentsOfFile:path];
+		
+		NSString* bundleAppSettingsVersion = [plistSettingsfile objectForKey:@"settingsVersion"];
+		
+		if (![bundleAppSettingsVersion isEqualToString:settingsVersion]) {
+			
+			// on met à jours les settings en readonly seulement
+			cantineURI = [plistSettingsfile objectForKey:@"cantineURI"];
+			facebookURI = [plistSettingsfile objectForKey:@"facebookURI"];
+			twitterURI = [plistSettingsfile objectForKey:@"twitterURI"];
+			eventURI = [plistSettingsfile objectForKey:@"eventURI"];
+			rssURI = [plistSettingsfile objectForKey:@"rssURI"];
+			settingsVersion = [plistSettingsfile objectForKey:@"settingsVersion"];
+		}
 	}
 }
 

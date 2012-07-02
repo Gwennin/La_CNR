@@ -42,8 +42,11 @@
 	[result sortUsingDescriptors:[NSArray arrayWithObjects:sortDescDate, sortDescTitle, nil]];
 	
 	NSMutableArray* posts = [NSMutableArray array];
-	RSSPost* lastObj = [result objectAtIndex:0];
-	[posts addObject:[NSMutableArray arrayWithObject:lastObj]];
+	RSSPost* lastObj = nil;
+	if ([result count]) {
+		lastObj = [result objectAtIndex:0];
+		[posts addObject:[NSMutableArray arrayWithObject:lastObj]];
+	}
 	int currentIndex = 0;
 	
 	for (int i = 1; i < [result count]; i++) {

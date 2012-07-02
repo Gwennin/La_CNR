@@ -29,5 +29,8 @@
 @property (atomic, retain) NSDate* date;
 
 - (id) init;
++(NSArray*)loadFromCoreData;
++(BOOL)isInCoreData:(Event*)post;
++(NSArray*)getThreeFutureEvents;
 
 @end

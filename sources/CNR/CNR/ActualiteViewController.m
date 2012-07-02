@@ -84,7 +84,13 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
     
-	cell.textLabel.text = [[[data objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] title];
+	if ([[[[data objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] title] length] != 0) {
+		cell.textLabel.text = [[[data objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] title];
+	}
+	else {
+		cell.textLabel.text = @"Aucun titre";
+	}
+	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
     return cell;

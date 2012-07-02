@@ -27,8 +27,6 @@ static NSString* const RSSPostEntity = @"RSSPost";
 
 -(id)initWithThreadName:(NSString*)name {
 	
-    self = [super init];
-	
 	self = [super init];
 	
 	if (managedObjectContextThreads == nil) {
