@@ -199,6 +199,10 @@ static EventRepository* __sharedEventRepository = nil;
 	NSFetchRequest* request = [[NSFetchRequest alloc] init];
 	
 	[request setEntity:entity];
+    
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"date >= %@", [NSDate date]];
+    
+    [request setPredicate:predicate];
 	
 	NSError* error = nil;
 	NSMutableArray* result = [[[mcd managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
@@ -286,7 +290,7 @@ static EventRepository* __sharedEventRepository = nil;
 	NSError* error = nil;
 	NSMutableArray* result = [[[mcd managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
 	
-	NSSortDescriptor* sortDescDate = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO selector:@selector(compare:)];
+	NSSortDescriptor* sortDescDate = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES selector:@selector(compare:)];
 	NSSortDescriptor* sortDescTitle = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
 	
 	[result sortUsingDescriptors:[NSArray arrayWithObjects:sortDescDate, sortDescTitle, nil]];
