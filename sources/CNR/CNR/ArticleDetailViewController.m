@@ -100,8 +100,16 @@
 		if (YES) {
 			MFMailComposeViewController* mailComposeController = [[MFMailComposeViewController alloc] init];
 			[mailComposeController setMailComposeDelegate:self];
-			[mailComposeController setSubject:@"Titre de l'article"];
-			[mailComposeController setMessageBody:@"SuperContenu" isHTML:NO];
+			[mailComposeController setSubject:post.title];
+			
+			NSDateFormatter* df = [[NSDateFormatter alloc] init];
+			df.locale = [NSLocale currentLocale];
+			df.dateFormat = @"EEEE, dd MMMM yyyy à HH:mm";
+			
+			NSString *mail = [NSString stringWithFormat:@"<h1 style=\"font-size:20px;\">%@</h1><br />%@<br /><br />%@<br /><br /><a href=\"%@\">%@</a>",
+							  post.title, [df stringFromDate:[post pubDate]], post.content, post.link, post.link];
+
+			[mailComposeController setMessageBody:mail isHTML:YES];
 			
 			[self presentModalViewController:mailComposeController animated:YES];
 		}
@@ -111,13 +119,15 @@
 				if ([TWTweetComposeViewController canSendTweet])
 				{
 					TWTweetComposeViewController *tweetSheet = [[TWTweetComposeViewController alloc] init];
-					[tweetSheet setInitialText:@"Testing Tweets With iOS"];
+					
+					NSString *tweet = [NSString stringWithFormat:@"%@ %@ via @laCNR", post.title, post.link];
+					[tweetSheet setInitialText:tweet];
 					[self presentModalViewController:tweetSheet animated:YES];
 				}
 				break;
 			}
 		case 2:
-			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://github.com/Gwennin/CNR_iOS_app"]];
+			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:post.link]];
 			break;
 	}
 }

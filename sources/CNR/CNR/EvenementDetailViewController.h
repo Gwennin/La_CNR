@@ -1,5 +1,5 @@
 //
-//  EvenementDetailViewControllerViewController.h
+//  EvenementDetailViewController.h
 //  CNR
 //
 //  Created by Gwennin Le Bourdonnec on 04/05/12.

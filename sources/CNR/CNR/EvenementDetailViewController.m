@@ -1,5 +1,5 @@
 //
-//  EvenementDetailViewControllerViewController.m
+//  EvenementDetailViewController.m
 //  CNR
 //
 //  Created by Gwennin Le Bourdonnec on 04/05/12.
@@ -84,13 +84,13 @@
 												  delegate:self 
 										 cancelButtonTitle:@"Annuler"
 									destructiveButtonTitle:nil
-										 otherButtonTitles: @"Me rappeler 2h avant", @"Envoyer par e-mail", @"Tweeter l'événement", @"Ouvrir dans Safari", nil];
+										 otherButtonTitles: @"Me rappeler 2h avant", @"Envoyer par e-mail", @"Tweeter l'événement", nil];
 	} else {
 		actionSheet = [[UIActionSheet alloc] initWithTitle:[self.navigationItem title]
 												  delegate:self 
 										 cancelButtonTitle:@"Annuler"
 									destructiveButtonTitle:nil
-										 otherButtonTitles: @"Me rappeler 2h avant", @"Envoyer par e-mail", @"Ouvrir dans Safari", nil];
+										 otherButtonTitles: @"Me rappeler 2h avant", @"Envoyer par e-mail", nil];
 	}
 	
 	
@@ -104,9 +104,9 @@
 			//Petit bug de compillation, corrigé avec un if true
 			if (TRUE) {
 				NSDate * now = [NSDate date];	
-				// date & heure dans 5 s
+				// date & heure dans 7200 s (2h)
 				// NSDateInterval est exprimé en secondes
-				NSDate * theFuture = [now dateByAddingTimeInterval:5];
+				NSDate * theFuture = [now dateByAddingTimeInterval:7200];
 				
 				UILocalNotification *localNotification = [[UILocalNotification alloc] init];
 				
@@ -114,10 +114,16 @@
 				localNotification.fireDate = theFuture;
 				localNotification.timeZone = [NSTimeZone defaultTimeZone];
 				
+				
 				// On set les messages 
-				localNotification.alertBody = @"Ceci est un super message!\n Apple est génial!\nAchetez Apple!";
+				NSDateFormatter* df = [[NSDateFormatter alloc] init];
+				df.locale = [NSLocale currentLocale];
+				df.dateFormat = @"EEEE, dd MMMM yyyy à HH:mm";
+				
+				localNotification.alertBody = [NSString stringWithFormat:@"%@\n%@ à la Cantine numérique rennaise", event.title, [df stringFromDate:event.date]];
 				
 				// Sons & Application Badge
+				
 				localNotification.soundName = UILocalNotificationDefaultSoundName;
 								
 				[[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
@@ -128,8 +134,16 @@
 			if (YES) {
 				MFMailComposeViewController* mailComposeController = [[MFMailComposeViewController alloc] init];
 				[mailComposeController setMailComposeDelegate:self];
-				[mailComposeController setSubject:@"Intitulé de l'événement"];
-				[mailComposeController setMessageBody:@"SuperContenu" isHTML:NO];
+				[mailComposeController setSubject:event.title];
+				
+				NSDateFormatter* df = [[NSDateFormatter alloc] init];
+				df.locale = [NSLocale currentLocale];
+				df.dateFormat = @"EEEE, dd MMMM yyyy à HH:mm";
+				
+				NSString *mail = [NSString stringWithFormat:@"<h1 style=\"font-size:20px;\">%@</h1><br />%@<br /><br />%@<br />",
+								  event.title, [df stringFromDate:event.date], event.content];
+				
+				[mailComposeController setMessageBody:mail isHTML:YES];
 				
 				[self presentModalViewController:mailComposeController animated:YES];
 			}
@@ -139,13 +153,18 @@
 				if ([TWTweetComposeViewController canSendTweet])
 				{
 					TWTweetComposeViewController *tweetSheet = [[TWTweetComposeViewController alloc] init];
-					[tweetSheet setInitialText:@"Testing Tweets With iOS"];
+					
+					NSDateFormatter* df = [[NSDateFormatter alloc] init];
+					df.locale = [NSLocale currentLocale];
+					df.dateFormat = @"EEEE, dd MMMM yyyy à HH:mm";
+					
+					NSString *tweet = [NSString stringWithFormat:@"%@ %@ à la Cantine numérique rennaise via @laCNR", event.title, [df stringFromDate:event.date]];
+					
+					[tweetSheet setInitialText:tweet];
 					[self presentModalViewController:tweetSheet animated:YES];
 				}
 				break;
 			}
-		case 3:
-			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://github.com/Gwennin/CNR_iOS_app"]];
 			break;
 	}
 }
