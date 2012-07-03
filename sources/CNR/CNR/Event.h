@@ -32,8 +32,4 @@
 - (NSString*) title;
 - (void) setTitle:(NSString*)_title;
 
-+(NSArray*)loadFromCoreData;
-+(BOOL)isInCoreData:(Event*)post;
-+(NSArray*)getThreeFutureEvents;
-
 @end

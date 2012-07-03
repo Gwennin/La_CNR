@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "EvenementDetailViewController.h"
+#import "EventRepository.h"
 
 @interface HomeViewController ()
 
@@ -103,7 +104,7 @@
 		
 	refreshView.hidden = YES;
 		
-	eventsArray = [Event getThreeFutureEvents];
+	eventsArray = [EventRepository getThreeFutureEvents];
 	
 	[_tableView reloadData];
 }

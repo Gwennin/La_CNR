@@ -22,6 +22,10 @@
 @property (atomic) NSMutableArray* events;
 
 + (EventRepository*) sharedEventRepository;
++(NSArray*)loadFromCoreData;
++(BOOL)isInCoreData:(Event*)post;
++(NSArray*)getThreeFutureEvents;
+
 - (NSString*) titleForHeaderInSection:(NSInteger) section;
 - (NSArray*) uniqueDates;
 @end

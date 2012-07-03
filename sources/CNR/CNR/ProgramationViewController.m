@@ -8,6 +8,7 @@
 
 #import "ProgramationViewController.h"
 #import "EvenementDetailViewController.h"
+#import "EventRepository.h"
 
 @interface ProgramationViewController ()
 
@@ -81,7 +82,7 @@
 
 -(void)reloadData {	
 		
-	data = [Event loadFromCoreData];
+	data = [EventRepository loadFromCoreData];
 	
 	if ([data count] != 0) {
 		refreshView.hidden = YES;

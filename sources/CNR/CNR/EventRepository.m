@@ -110,12 +110,12 @@ static EventRepository* __sharedEventRepository = nil;
     {
         [event setContent:currentNodeValue];
     }
-    else if([elementName isEqualToString:@"entry"] && event && ![Event isInCoreData:event])
+    else if([elementName isEqualToString:@"entry"] && event && ![EventRepository isInCoreData:event])
     {
         [events addObject:event];
         event = nil;
     }
-	else if([elementName isEqualToString:@"entry"] && event && [Event isInCoreData:event])
+	else if([elementName isEqualToString:@"entry"] && event && [EventRepository isInCoreData:event])
     {
         [[mcd managedObjectContext] deleteObject:event];
         event = nil;
