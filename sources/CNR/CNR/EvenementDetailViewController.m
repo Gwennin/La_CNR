@@ -84,13 +84,13 @@
 												  delegate:self 
 										 cancelButtonTitle:@"Annuler"
 									destructiveButtonTitle:nil
-										 otherButtonTitles: @"Me rappeler 2h avant", @"Envoyer par e-mail", @"Tweeter l'évènement", @"Ouvrir Dans Safari", nil];
+										 otherButtonTitles: @"Me rappeler 2h avant", @"Envoyer par e-mail", @"Tweeter l'événement", @"Ouvrir dans Safari", nil];
 	} else {
 		actionSheet = [[UIActionSheet alloc] initWithTitle:[self.navigationItem title]
 												  delegate:self 
 										 cancelButtonTitle:@"Annuler"
 									destructiveButtonTitle:nil
-										 otherButtonTitles: @"Me rappeler 2h avant", @"Envoyer par e-mail", @"Ouvrir Dans Safari", nil];
+										 otherButtonTitles: @"Me rappeler 2h avant", @"Envoyer par e-mail", @"Ouvrir dans Safari", nil];
 	}
 	
 	
@@ -128,7 +128,7 @@
 			if (YES) {
 				MFMailComposeViewController* mailComposeController = [[MFMailComposeViewController alloc] init];
 				[mailComposeController setMailComposeDelegate:self];
-				[mailComposeController setSubject:@"Intitulé de l'évènement"];
+				[mailComposeController setSubject:@"Intitulé de l'événement"];
 				[mailComposeController setMessageBody:@"SuperContenu" isHTML:NO];
 				
 				[self presentModalViewController:mailComposeController animated:YES];
