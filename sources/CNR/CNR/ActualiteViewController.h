@@ -11,11 +11,14 @@
 
 @interface ActualiteViewController : UITableViewController {
 	
-	ActivityIndicator* loadView;
+	//ActivityIndicator* loadView;
 	
 	NSArray* data;
+	
+	UIView * refreshView;
 }
 
+-(void)loadingData;
 -(void)reloadData;
 
 @end

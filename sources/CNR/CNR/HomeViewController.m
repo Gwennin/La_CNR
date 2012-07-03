@@ -20,9 +20,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
 		
-		/*[[NSNotificationCenter defaultCenter] addObserver:self
-		 selector:@selector(loadingData)
-		 name:@"EventsLoading" object:nil];*/
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(loadingData)
+													 name:@"EventsLoading" object:nil];
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(reloadData)
 													 name:@"EventsLoadEnding" object:nil];
@@ -40,7 +40,7 @@
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	if ([eventsArray count] == 0) {
+	if (([eventsArray count] == 0) ) {
 		return @"Aucun évènement";
 	}
 	else if ([eventsArray count] == 1) {
@@ -92,10 +92,17 @@
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[settings facebookURI]]];
 }
 
+-(void)loadingData {
+	
+	if ([eventsArray count] == 0) {
+		refreshView.hidden = NO;
+	}
+}
+
 -(void)reloadData {
-	
-	NSLog(@"ReloadData Home");
-	
+		
+	refreshView.hidden = YES;
+		
 	eventsArray = [Event getThreeFutureEvents];
 	
 	[_tableView reloadData];

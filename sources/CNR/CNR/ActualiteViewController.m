@@ -24,12 +24,41 @@
     if (self) {
 				
 		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(loadingData)
+													 name:@"RSSLoading" object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(reloadData)
 													 name:@"RSSLoadEnding" object:nil];
 		
 		self.title = @"Actualités";
 		self.tabBarItem.image = [UIImage imageNamed:@"RSS.png"];
 		self.view.backgroundColor = [UIColor whiteColor];
+		
+		refreshView = [[UIView alloc] initWithFrame:self.view.bounds];
+		
+		[refreshView setBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.25]];
+		
+		CGRect labelPos = CGRectMake(0, (self.view.bounds.size.height - 44) / 2 - 60, self.view.bounds.size.width, 20);
+		UILabel* text = [[UILabel alloc] initWithFrame:labelPos];
+		text.text = @"Actualisation en cours";
+		text.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+		text.textAlignment = UITextAlignmentCenter;
+		
+		text.font = [UIFont boldSystemFontOfSize:17.0];
+		text.textColor = [UIColor whiteColor];
+		text.shadowColor = [UIColor grayColor];
+		text.shadowOffset = CGSizeMake(0, -1);
+		
+		CGRect activityPos = CGRectMake(self.view.frame.size.width / 2 - 37 /2, (self.view.bounds.size.height - 44) / 2 -  37 /2, 37, 37);
+		UIActivityIndicatorView* activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+		activity.frame = activityPos;
+		[activity startAnimating];
+		
+		[refreshView addSubview:text];
+		[refreshView addSubview:activity];
+		[self.view addSubview:refreshView];
+		
+		refreshView.hidden = YES;
 		
 	}
     return self;
@@ -42,8 +71,23 @@
 	[self reloadData];
 }
 
--(void)reloadData {	
+-(void)loadingData {
+	
+	if ([data count] == 0) {
+		refreshView.hidden = NO;
+		[self.tableView setScrollEnabled:NO];
+	}
+}
+
+-(void)reloadData {
+	
 	data = [RSSPost loadFromCoreData];
+	
+	if ([data count] != 0) {
+		refreshView.hidden = YES;
+		[self.tableView setScrollEnabled:YES];
+	}
+	
 	[self.tableView reloadData];
 }
 

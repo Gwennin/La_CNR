@@ -15,7 +15,11 @@
     //EventRepository* er;
 	NSArray* data;
 	
-	ActivityIndicator* loadView;
+	//ActivityIndicator* loadView;
+	UIView * refreshView;
 }
+
+-(void)loadingData;
+-(void)reloadData;
 
 @end

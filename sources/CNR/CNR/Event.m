@@ -163,9 +163,7 @@
 	
 	NSDate* today = [NSDate date];
 	NSPredicate* predicate = [NSPredicate predicateWithFormat:@"(date >= %@)", today];
-	
-	NSLog(@"%@", predicate);
-	
+		
 	[request setPredicate:predicate];
 	
 	NSError* error = nil;
