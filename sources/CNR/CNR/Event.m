@@ -11,16 +11,20 @@
 
 @implementation Event
 
-@synthesize idE, publishedAt, updatedAt, title, summary, content;
-@synthesize date;
-
-/*- (NSDate*) date
+- (NSString*) title
 {
-    if(!date)
-        date = [self dateFromSummary];
+    if(!title)
+        return @"Sans titre";
     
-    return date;
-}*/
+    return title;
+}
+
+- (void) setTitle:(NSString*)_title
+{
+    title = _title;
+}
+
+@synthesize idE, publishedAt, updatedAt, summary, content, date;
 
 - (id)init
 {

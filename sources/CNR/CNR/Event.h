@@ -29,6 +29,8 @@
 @property (atomic, retain) NSDate* date;
 
 - (NSDate*) dateFromSummary;
+- (NSString*) title;
+- (void) setTitle:(NSString*)_title;
 
 +(NSArray*)loadFromCoreData;
 +(BOOL)isInCoreData:(Event*)post;
