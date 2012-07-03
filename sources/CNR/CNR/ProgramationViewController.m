@@ -124,7 +124,7 @@
 		cell.textLabel.text = [[[data objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] title];
 	}
 	else {
-		cell.textLabel.text = @"Aucun titre";
+		cell.textLabel.text = @"Événement sans titre";
 	}
 	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
