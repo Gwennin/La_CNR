@@ -21,7 +21,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Évènement";
+        self.title = @"Événement";
 		
 		/*UILabel* titleLabel = [[UILabel alloc] init];
 		 titleLabel.text = self.title;
