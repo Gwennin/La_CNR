@@ -72,7 +72,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    EvenementDetailViewController* edvc = [[EvenementDetailViewController alloc] initWithNibName:@"EvenementDetailViewControllerViewController" bundle:nil];
+    EvenementDetailViewController* edvc = [[EvenementDetailViewController alloc] initWithNibName:@"EvenementDetailViewController" bundle:nil];
 	[edvc setEvent:[eventsArray objectAtIndex:indexPath.row]];
 	
 	[self.navigationController pushViewController:edvc animated:YES];
