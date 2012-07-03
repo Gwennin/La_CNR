@@ -10,10 +10,10 @@
 #import <MessageUI/MessageUI.h>
 #import "Event.h"
 
-@interface EvenementDetailViewControllerViewController : UIViewController <UIActionSheetDelegate, MFMailComposeViewControllerDelegate> {
+@interface EvenementDetailViewController : UIViewController <UIActionSheetDelegate, MFMailComposeViewControllerDelegate, UIWebViewDelegate> {
 	IBOutlet UIScrollView* scrollView;
 	
-	IBOutlet UILabel* text;
+	IBOutlet UIWebView* text;
 	IBOutlet UILabel * eventTitle;
 	IBOutlet UILabel * date;
 }

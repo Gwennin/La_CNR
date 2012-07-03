@@ -10,9 +10,7 @@
 #import "ActivityIndicator.h"
 
 @interface ActualiteViewController : UITableViewController {
-	
-	//ActivityIndicator* loadView;
-	
+		
 	NSArray* data;
 	
 	UIView * refreshView;

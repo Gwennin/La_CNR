@@ -11,8 +11,8 @@
 		5D3C4166155438DA0007A374 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3C4165155438DA0007A374 /* Settings.m */; };
 		5D42C7561553392D00B2783B /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D42C7551553392D00B2783B /* Twitter.framework */; };
 		5D42C75915533B0000B2783B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D42C75815533B0000B2783B /* MessageUI.framework */; };
-		5D42C75D15533C9600B2783B /* EvenementDetailViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D42C75B15533C9600B2783B /* EvenementDetailViewControllerViewController.m */; };
-		5D42C75E15533C9600B2783B /* EvenementDetailViewControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D42C75C15533C9600B2783B /* EvenementDetailViewControllerViewController.xib */; };
+		5D42C75D15533C9600B2783B /* EvenementDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D42C75B15533C9600B2783B /* EvenementDetailViewController.m */; };
+		5D42C75E15533C9600B2783B /* EvenementDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D42C75C15533C9600B2783B /* EvenementDetailViewController.xib */; };
 		5D5D3A2A15500098001E3E5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5D3A2915500098001E3E5D /* UIKit.framework */; };
 		5D5D3A2C15500098001E3E5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5D3A2B15500098001E3E5D /* Foundation.framework */; };
 		5D5D3A2E15500098001E3E5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5D3A2D15500098001E3E5D /* CoreGraphics.framework */; };
@@ -80,9 +80,9 @@
 		5D3C4165155438DA0007A374 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		5D42C7551553392D00B2783B /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		5D42C75815533B0000B2783B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		5D42C75A15533C9600B2783B /* EvenementDetailViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvenementDetailViewControllerViewController.h; sourceTree = "<group>"; };
-		5D42C75B15533C9600B2783B /* EvenementDetailViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvenementDetailViewControllerViewController.m; sourceTree = "<group>"; };
-		5D42C75C15533C9600B2783B /* EvenementDetailViewControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvenementDetailViewControllerViewController.xib; sourceTree = "<group>"; };
+		5D42C75A15533C9600B2783B /* EvenementDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = EvenementDetailViewController.h; sourceTree = "<group>"; };
+		5D42C75B15533C9600B2783B /* EvenementDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvenementDetailViewController.m; sourceTree = "<group>"; };
+		5D42C75C15533C9600B2783B /* EvenementDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvenementDetailViewController.xib; sourceTree = "<group>"; };
 		5D5D3A2515500098001E3E5D /* CNR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5D3A2915500098001E3E5D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5D5D3A2B15500098001E3E5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -317,9 +317,9 @@
 				5DE7912C15513A5400A181BD /* ArticleDetailViewController.h */,
 				5DE7912D15513A5400A181BD /* ArticleDetailViewController.m */,
 				5DE7912E15513A5400A181BD /* ArticleDetailViewController.xib */,
-				5D42C75A15533C9600B2783B /* EvenementDetailViewControllerViewController.h */,
-				5D42C75B15533C9600B2783B /* EvenementDetailViewControllerViewController.m */,
-				5D42C75C15533C9600B2783B /* EvenementDetailViewControllerViewController.xib */,
+				5D42C75A15533C9600B2783B /* EvenementDetailViewController.h */,
+				5D42C75B15533C9600B2783B /* EvenementDetailViewController.m */,
+				5D42C75C15533C9600B2783B /* EvenementDetailViewController.xib */,
 			);
 			name = Secondary;
 			sourceTree = "<group>";
@@ -441,7 +441,7 @@
 				5DE7912715512BB100A181BD /* logo_web2rennes.png in Resources */,
 				5DE791291551352900A181BD /* programation@2x.png in Resources */,
 				5DE7913015513A5400A181BD /* ArticleDetailViewController.xib in Resources */,
-				5D42C75E15533C9600B2783B /* EvenementDetailViewControllerViewController.xib in Resources */,
+				5D42C75E15533C9600B2783B /* EvenementDetailViewController.xib in Resources */,
 				5D3C415F1554383C0007A374 /* Settings.plist in Resources */,
 				5DBDDB781554759300B311BB /* refreshBGHome.png in Resources */,
 				5DBDDB791554759300B311BB /* refreshBGHome@2x.png in Resources */,
@@ -475,7 +475,7 @@
 				5DE7912F15513A5400A181BD /* ArticleDetailViewController.m in Sources */,
 				5DE7913315513EDB00A181BD /* NavigationController.m in Sources */,
 				5DE791361551487800A181BD /* NavigationBar.m in Sources */,
-				5D42C75D15533C9600B2783B /* EvenementDetailViewControllerViewController.m in Sources */,
+				5D42C75D15533C9600B2783B /* EvenementDetailViewController.m in Sources */,
 				5D3C4166155438DA0007A374 /* Settings.m in Sources */,
 				5DBDDB6E1554416C00B311BB /* ExternalFeed.m in Sources */,
 				5DBDDB72155444AC00B311BB /* RSSPost.m in Sources */,

@@ -12,10 +12,8 @@
 
 @interface ProgramationViewController : UITableViewController
 {
-    //EventRepository* er;
 	NSArray* data;
 	
-	//ActivityIndicator* loadView;
 	UIView * refreshView;
 }
 

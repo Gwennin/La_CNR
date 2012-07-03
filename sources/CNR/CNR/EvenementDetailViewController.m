@@ -7,13 +7,13 @@
 //
 
 #import <Twitter/Twitter.h>
-#import "EvenementDetailViewControllerViewController.h"
+#import "EvenementDetailViewController.h"
 
-@interface EvenementDetailViewControllerViewController ()
+@interface EvenementDetailViewController ()
 
 @end
 
-@implementation EvenementDetailViewControllerViewController
+@implementation EvenementDetailViewController
 
 @synthesize event;
 
@@ -38,8 +38,8 @@
     return self;
 }
 
--(void)viewDidAppear:(BOOL)animated {
-	[super viewDidAppear:animated];
+-(void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
 	
 	scrollView.contentSize = CGSizeMake(320, 1050);
 	
@@ -47,9 +47,26 @@
 	self.navigationItem.rightBarButtonItem = actionButton;
 	
 	if (event) {
+		
 		eventTitle.text = event.title;
-		date.text = event.date.description;
-		text.text = event.content;
+				
+		NSDateFormatter* df = [[NSDateFormatter alloc] init];
+		df.locale = [NSLocale currentLocale];
+		df.dateFormat = @"EEEE, dd MMMM yyyy à HH:mm";
+		
+		date.text = [df stringFromDate:event.date];
+		
+		[text loadHTMLString:event.content baseURL:nil];
+		
+		[text setBackgroundColor:[UIColor whiteColor]];
+		
+		for (id subview in text.subviews)
+			if ([[subview class] isSubclassOfClass: [UIScrollView class]]) {
+				((UIScrollView *)subview).bounces = NO;
+				((UIScrollView *)subview).showsHorizontalScrollIndicator = NO;
+			}
+		
+		[text setDelegate:self];
 	}
 }
 
@@ -138,5 +155,14 @@
 	[controller dismissModalViewControllerAnimated:YES];
 }
 
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+	
+	if (![[request URL] host]) {
+		return YES;
+	}
+	
+    [[UIApplication sharedApplication] openURL:request.URL];
+    return NO;
+}
 
 @end

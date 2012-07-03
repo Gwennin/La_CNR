@@ -7,7 +7,7 @@
 //
 
 #import "ProgramationViewController.h"
-#import "EvenementDetailViewControllerViewController.h"
+#import "EvenementDetailViewController.h"
 
 @interface ProgramationViewController ()
 
@@ -133,7 +133,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	EvenementDetailViewControllerViewController* edvc = [[EvenementDetailViewControllerViewController alloc] initWithNibName:@"EvenementDetailViewControllerViewController" bundle:nil];
+	EvenementDetailViewController* edvc = [[EvenementDetailViewController alloc] initWithNibName:@"EvenementDetailViewControllerViewController" bundle:nil];
 	[edvc setEvent:[[data objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
 
 	[self.navigationController pushViewController:edvc animated:YES];
