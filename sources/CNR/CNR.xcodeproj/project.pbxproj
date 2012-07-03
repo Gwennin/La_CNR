@@ -70,6 +70,7 @@
 		5DE7913015513A5400A181BD /* ArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DE7912E15513A5400A181BD /* ArticleDetailViewController.xib */; };
 		5DE7913315513EDB00A181BD /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7913215513EDB00A181BD /* NavigationController.m */; };
 		5DE791361551487800A181BD /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE791351551487800A181BD /* NavigationBar.m */; };
+		7A6912F015A3B49000C43409 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 7A6912EF15A3B49000C43409 /* style.css */; };
 		7A7033091550803C00804C31 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7033061550803C00804C31 /* Event.m */; };
 		7A70330A1550803C00804C31 /* EventRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7033081550803C00804C31 /* EventRepository.m */; };
 /* End PBXBuildFile section */
@@ -80,7 +81,7 @@
 		5D3C4165155438DA0007A374 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		5D42C7551553392D00B2783B /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		5D42C75815533B0000B2783B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		5D42C75A15533C9600B2783B /* EvenementDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = EvenementDetailViewController.h; sourceTree = "<group>"; };
+		5D42C75A15533C9600B2783B /* EvenementDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvenementDetailViewController.h; sourceTree = "<group>"; };
 		5D42C75B15533C9600B2783B /* EvenementDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvenementDetailViewController.m; sourceTree = "<group>"; };
 		5D42C75C15533C9600B2783B /* EvenementDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvenementDetailViewController.xib; sourceTree = "<group>"; };
 		5D5D3A2515500098001E3E5D /* CNR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +159,7 @@
 		5DE7913215513EDB00A181BD /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		5DE791341551487800A181BD /* NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
 		5DE791351551487800A181BD /* NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
+		7A6912EF15A3B49000C43409 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		7A7033051550803C00804C31 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		7A7033061550803C00804C31 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		7A7033071550803C00804C31 /* EventRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventRepository.h; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				5D5D3A9A1550252E001E3E5D /* HomeButton@2x.png */,
 				5D5D3A9815501DB5001E3E5D /* LaCNR.png */,
 				5DE7911015511D5900A181BD /* presentation.html */,
+				7A6912EF15A3B49000C43409 /* style.css */,
 			);
 			name = Resources;
 			path = ..;
@@ -453,6 +456,7 @@
 				5DDFE5E2155D367C009242C6 /* Launch@2x.png in Resources */,
 				5DDFE5E4155D368C009242C6 /* Default.png in Resources */,
 				5DDFE5E6155D36A4009242C6 /* Default@2x.png in Resources */,
+				7A6912F015A3B49000C43409 /* style.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

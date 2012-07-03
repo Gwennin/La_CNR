@@ -1,0 +1,29 @@
+body {
+    font-size: 13px;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+    color: rgb(50, 50, 50);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Trebuchet MS";
+    font-weight: 700;
+    line-height: 1.2em;
+    color: rgb(43, 43, 43);
+    margin: 0px;
+    padding: 10px 0px;
+    letter-spacing: -1px;
+}
+
+h2 {
+    margin-bottom: -15px;
+}
+
+li {
+    margin-left: -20px;
+    margin-bottom: 5px;
+}
+
+a {
+    color: rgb(83, 62, 50);
+    font-weight: bold;
+}
