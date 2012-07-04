@@ -64,7 +64,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FastView"];
     Event* e = [eventsArray objectAtIndex:indexPath.row];
-	cell.textLabel.text = [NSString stringWithFormat:@"%@", [e title]];
+    
+    NSString* title = ([[e title] length] != 0) ? [e title] : @"Événement sans titre";
+	cell.textLabel.text = [NSString stringWithFormat:@"%@", title];
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
 	return cell;
