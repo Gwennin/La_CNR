@@ -102,11 +102,10 @@
 	switch (buttonIndex) {
 		case 0:
 			//Petit bug de compillation, corrigé avec un if true
-			if (TRUE) {
-				NSDate * now = [NSDate date];	
+			if (TRUE) {	
 				// date & heure dans 7200 s (2h)
 				// NSDateInterval est exprimé en secondes
-				NSDate * theFuture = [now dateByAddingTimeInterval:7200];
+				NSDate * theFuture = [[event date] dateByAddingTimeInterval:-7200];
 				
 				UILocalNotification *localNotification = [[UILocalNotification alloc] init];
 				
