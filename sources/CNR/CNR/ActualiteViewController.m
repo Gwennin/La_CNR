@@ -8,7 +8,6 @@
 
 #import "ActualiteViewController.h"
 #import "ArticleDetailViewController.h"
-#import "ActivityIndicator.h"
 #import "ManageApp.h"
 #import "RSSPost.h"
 

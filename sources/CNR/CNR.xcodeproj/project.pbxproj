@@ -46,7 +46,6 @@
 		5DBDDB75155448D100B311BB /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB74155448D100B311BB /* RSSParser.m */; };
 		5DBDDB781554759300B311BB /* refreshBGHome.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBDDB761554759300B311BB /* refreshBGHome.png */; };
 		5DBDDB791554759300B311BB /* refreshBGHome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBDDB771554759300B311BB /* refreshBGHome@2x.png */; };
-		5DBDDB7C1554780100B311BB /* ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBDDB7B1554780100B311BB /* ActivityIndicator.m */; };
 		5DDFE5DA155D34F5009242C6 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DDFE5D6155D34F3009242C6 /* Icon-Small.png */; };
 		5DDFE5DB155D34F5009242C6 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DDFE5D7155D34F3009242C6 /* Icon-Small@2x.png */; };
 		5DDFE5DC155D34F5009242C6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DDFE5D8155D34F4009242C6 /* Icon.png */; };
@@ -131,8 +130,6 @@
 		5DBDDB74155448D100B311BB /* RSSParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSParser.m; sourceTree = "<group>"; };
 		5DBDDB761554759300B311BB /* refreshBGHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refreshBGHome.png; path = ../../imgs/refreshBGHome.png; sourceTree = "<group>"; };
 		5DBDDB771554759300B311BB /* refreshBGHome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refreshBGHome@2x.png"; path = "../../imgs/refreshBGHome@2x.png"; sourceTree = "<group>"; };
-		5DBDDB7A1554780100B311BB /* ActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicator.h; sourceTree = "<group>"; };
-		5DBDDB7B1554780100B311BB /* ActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicator.m; sourceTree = "<group>"; };
 		5DDFE5D6155D34F3009242C6 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		5DDFE5D7155D34F3009242C6 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		5DDFE5D8155D34F4009242C6 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -308,8 +305,6 @@
 				5DE7913215513EDB00A181BD /* NavigationController.m */,
 				5DE791341551487800A181BD /* NavigationBar.h */,
 				5DE791351551487800A181BD /* NavigationBar.m */,
-				5DBDDB7A1554780100B311BB /* ActivityIndicator.h */,
-				5DBDDB7B1554780100B311BB /* ActivityIndicator.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -484,7 +479,6 @@
 				5DBDDB6E1554416C00B311BB /* ExternalFeed.m in Sources */,
 				5DBDDB72155444AC00B311BB /* RSSPost.m in Sources */,
 				5DBDDB75155448D100B311BB /* RSSParser.m in Sources */,
-				5DBDDB7C1554780100B311BB /* ActivityIndicator.m in Sources */,
 				5DB747CF155923B200BBA717 /* CNR.xcdatamodeld in Sources */,
 				5DB747D9155926A400BBA717 /* ManageCoreData.m in Sources */,
 				5DB747E015596DF400BBA717 /* ManageApp.m in Sources */,
