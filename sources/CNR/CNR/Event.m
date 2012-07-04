@@ -11,20 +11,7 @@
 
 @implementation Event
 
-- (NSString*) title
-{
-    if(!title)
-        return @"Sans titre";
-    
-    return title;
-}
-
-- (void) setTitle:(NSString*)_title
-{
-    title = _title;
-}
-
-@synthesize idE, publishedAt, updatedAt, summary, content, date;
+@synthesize idE, publishedAt, updatedAt, summary, content, date,title;
 
 - (id)init
 {
