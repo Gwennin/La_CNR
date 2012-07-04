@@ -45,24 +45,33 @@ static NSString* const RSSPostEntity = @"RSSPost";
 		return self;
 	}
 	
-	// Si un thread possède le même nom, on l'unset et le remplace
-	if ([[threads allKeys] containsObject:name] || [[managedObjectContextThreads allKeys] containsObject:name]) {
-		
-		[(NSThread*)[threads objectForKey:name] cancel];
-		[threads setValue:[NSThread currentThread] forKey:name];
-		_threadedContext = [managedObjectContextThreads valueForKey:name];
-		
+	@try {
+		// Si un thread possède le même nom, on l'unset et le remplace
+		if ([[threads allKeys] containsObject:name] || [[managedObjectContextThreads allKeys] containsObject:name]) {
+			
+			[(NSThread*)[threads objectForKey:name] cancel];
+			[threads setValue:[NSThread currentThread] forKey:name];
+			_threadedContext = [managedObjectContextThreads valueForKey:name];
+			
+		}
+		else {
+			//sinon on créé l'objet managedObjectContext et on le stoque dans le tableau
+			
+			_threadedContext = self.managedObjectContext;
+			
+			[managedObjectContextThreads setValue:_threadedContext forKey:name];
+			[threads setValue:[NSThread currentThread] forKey:name];
+		}
 	}
-	else {
-		//sinon on créé l'objet managedObjectContext et on le stoque dans le tableau
-		
-		_threadedContext = self.managedObjectContext;
-		
-		[managedObjectContextThreads setValue:_threadedContext forKey:name];
-		[threads setValue:[NSThread currentThread] forKey:name];
+	@catch (NSException *exception) {
+		NSLog(@"Exception : %@", exception.reason);
+	}
+	@finally {
+		return self;
 	}
 	
-	return self;
+	
+	
 }
 
 - (NSManagedObjectContext*)managedObjectContext {
@@ -118,9 +127,16 @@ static NSString* const RSSPostEntity = @"RSSPost";
 	
 	NSString * name = [[NSThread currentThread] name];
 	
-	if ((name != nil) && [[threads allKeys] containsObject:name]) {
-		[threads removeObjectForKey:name];
+	@try {
+		if ((name != nil) && [[threads allKeys] containsObject:name]) {
+			[threads removeObjectForKey:name];
+		}
 	}
+	@catch (NSException *exception) {
+		NSLog(@"Exception : %@", exception.reason);
+	}
+
+	
 }
 
 -(void)dealloc {
