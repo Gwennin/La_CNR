@@ -167,6 +167,10 @@ static EventRepository* __sharedEventRepository = nil;
     NSMutableArray* uDates = [[NSMutableArray alloc] initWithArray:dates];
     
     NSInteger index = [dates count] - 1;
+    
+    if(index < 1)
+        return [[NSArray alloc ] init];
+    
     for(NSDate* d in dates)
     {
         if([uDates indexOfObject:d inRange:NSMakeRange(0, index)] != NSNotFound)

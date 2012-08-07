@@ -31,6 +31,9 @@
                                   options:0
                                   error:nil];
     
+    if([summary length] == 0)
+        return [[NSDate alloc] init];
+    
     NSRange range = [regex rangeOfFirstMatchInString:summary options:0 range:NSMakeRange(0, [summary length])];
 	
 	if (range.location != NSNotFound) {
@@ -70,6 +73,9 @@
                  regularExpressionWithPattern:removeUnused
                  options:0
                  error:nil];
+        
+        if([summary length] == 0)
+            return [[NSDate alloc] init];
         
         range = [regex rangeOfFirstMatchInString:summary options:0 range:NSMakeRange(0, [summary length])];
         
