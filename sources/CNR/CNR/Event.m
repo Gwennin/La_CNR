@@ -32,11 +32,11 @@
                                   error:nil];
     
     if([summary length] == 0)
-        return [[NSDate alloc] init];
+        return nil;
     
     NSRange range = [regex rangeOfFirstMatchInString:summary options:0 range:NSMakeRange(0, [summary length])];
 	
-	if (range.location != NSNotFound) {
+	if ((range.location != NSNotFound) && (range.length + range.location <= [summary length])) {
 		NSString* preStrDate = [summary substringWithRange:range];
 		
 		NSArray* components = [preStrDate componentsSeparatedByString:@" "];
@@ -75,35 +75,38 @@
                  error:nil];
         
         if([summary length] == 0)
-            return [[NSDate alloc] init];
+            return nil;
         
         range = [regex rangeOfFirstMatchInString:summary options:0 range:NSMakeRange(0, [summary length])];
         
-        NSString* preStrDate = [summary substringWithRange:range];
-        
-        NSArray* components = [preStrDate componentsSeparatedByString:@" "];
-		NSString* strDate =[NSString stringWithFormat:@"%@ %@ %@", [components objectAtIndex:0],
-							[components objectAtIndex:1],
-							[components objectAtIndex:2]];
-        
-        //Conversion en date
-		
-		NSDateFormatter* df = [[NSDateFormatter alloc] init];
-		[df setDateFormat:@"d MMM yyyy"];
-		[df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"fr_FR"]];
-		
-		NSDate* d = [df dateFromString:strDate];
-		
-		
-		strDate =[NSString stringWithFormat:@"%@ %@ %@", [components objectAtIndex:0],
-				  [components objectAtIndex:1],
-				  [components objectAtIndex:2]];
-		
-		NSDate* d2 = [df dateFromString:strDate];
-		
-		NSArray* result = [NSArray arrayWithObjects:d, d2, nil];
-        
-		return [result objectAtIndex:0];
+		if (range.length + range.location <= [summary length]) {
+			NSString* preStrDate = [summary substringWithRange:range];
+			
+			NSArray* components = [preStrDate componentsSeparatedByString:@" "];
+			NSString* strDate =[NSString stringWithFormat:@"%@ %@ %@", [components objectAtIndex:0],
+								[components objectAtIndex:1],
+								[components objectAtIndex:2]];
+			
+			//Conversion en date
+			
+			NSDateFormatter* df = [[NSDateFormatter alloc] init];
+			[df setDateFormat:@"d MMM yyyy"];
+			[df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"fr_FR"]];
+			
+			NSDate* d = [df dateFromString:strDate];
+			
+			
+			strDate =[NSString stringWithFormat:@"%@ %@ %@", [components objectAtIndex:0],
+					  [components objectAtIndex:1],
+					  [components objectAtIndex:2]];
+			
+			NSDate* d2 = [df dateFromString:strDate];
+			
+			NSArray* result = [NSArray arrayWithObjects:d, d2, nil];
+			
+			return [result objectAtIndex:0];
+		}
+        return nil;
     }
 	return nil;
 }

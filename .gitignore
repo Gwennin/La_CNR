@@ -22,3 +22,5 @@ profile
 /sources/CNR/CNR/.DS_Store
 *.graffle
 /sources/CNR/build/
+
+/sources/CNR/DerivedData/

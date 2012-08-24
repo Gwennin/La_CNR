@@ -169,7 +169,7 @@ static EventRepository* __sharedEventRepository = nil;
     NSInteger index = [dates count] - 1;
     
     if(index < 1)
-        return [[NSArray alloc ] init];
+        return nil;
     
     for(NSDate* d in dates)
     {
@@ -284,6 +284,11 @@ static EventRepository* __sharedEventRepository = nil;
 	
 	[request setFetchLimit:3];
 	
+	NSSortDescriptor* sortDescDate = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES selector:@selector(compare:)];
+	NSSortDescriptor* sortDescTitle = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+	
+	[request setSortDescriptors:[NSArray arrayWithObjects:sortDescDate, sortDescTitle, nil]];
+	
 	NSDate* today = [NSDate date];
 	NSPredicate* predicate = [NSPredicate predicateWithFormat:@"(date >= %@)", today];
 	
@@ -293,11 +298,6 @@ static EventRepository* __sharedEventRepository = nil;
 	
 	NSError* error = nil;
 	NSMutableArray* result = [[[mcd managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
-	
-	NSSortDescriptor* sortDescDate = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES selector:@selector(compare:)];
-	NSSortDescriptor* sortDescTitle = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
-	
-	[result sortUsingDescriptors:[NSArray arrayWithObjects:sortDescDate, sortDescTitle, nil]];
 	
 	return result;
 }

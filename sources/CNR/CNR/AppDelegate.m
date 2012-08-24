@@ -41,17 +41,13 @@
 	self.window.rootViewController = self.mainController;
     [self.window makeKeyAndVisible];
 	
-	ManageApp* appManager = [[ManageApp alloc] init];
-	[appManager loadEvents];
-	[appManager loadRSSPosts];
-	
     return YES;
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
+-(void)applicationDidBecomeActive:(UIApplication *)application {
 	ManageApp* appManager = [[ManageApp alloc] init];
 	[appManager loadEvents];
+	[appManager loadRSSPosts];
 }
 
 #pragma mark -
