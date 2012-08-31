@@ -204,6 +204,9 @@ static EventRepository* __sharedEventRepository = nil;
 	
 	[request setEntity:entity];
     
+	// http://stackoverflow.com/a/7304350
+	[request setReturnsObjectsAsFaults:NO];
+	
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"date >= %@", [NSDate date]];
     
     [request setPredicate:predicate];
@@ -284,6 +287,9 @@ static EventRepository* __sharedEventRepository = nil;
 	
 	[request setFetchLimit:3];
 	
+	// http://stackoverflow.com/a/7304350
+	[request setReturnsObjectsAsFaults:NO];
+	
 	NSSortDescriptor* sortDescDate = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES selector:@selector(compare:)];
 	NSSortDescriptor* sortDescTitle = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
 	
@@ -291,9 +297,7 @@ static EventRepository* __sharedEventRepository = nil;
 	
 	NSDate* today = [NSDate date];
 	NSPredicate* predicate = [NSPredicate predicateWithFormat:@"(date >= %@)", today];
-	
-	NSLog(@"%@", predicate);
-	
+		
 	[request setPredicate:predicate];
 	
 	NSError* error = nil;

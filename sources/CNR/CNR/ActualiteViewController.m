@@ -145,4 +145,9 @@
 	[self.navigationController pushViewController:advc animated:YES];
 }
 
+-(void)viewDidUnload {
+	refreshView = nil;
+	data = nil;
+}
+
 @end

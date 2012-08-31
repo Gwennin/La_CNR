@@ -34,7 +34,8 @@
     return self;
 }
 
--(void) viewDidLoad {
+-(void)viewDidLoad {
+	
 	[super viewDidLoad];
 	
 	[self reloadData];
@@ -109,6 +110,13 @@
 	eventsArray = [EventRepository getThreeFutureEvents];
 	
 	[_tableView reloadData];
+}
+
+-(void)viewDidUnload {
+	
+	refreshView = nil;
+	eventsArray = nil;
+	_tableView = nil;
 }
 
 @end

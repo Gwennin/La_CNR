@@ -140,4 +140,9 @@
 	[self.navigationController pushViewController:edvc animated:YES];
 }
 
+-(void)viewDidUnload {
+	data = nil;
+	refreshView = nil;
+}
+
 @end

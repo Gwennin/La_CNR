@@ -36,7 +36,7 @@
 	
 	self.mainController = [[TabBarController alloc] init];
 	
-	[(TabBarController*)self.mainController setViewControllers:[NSArray arrayWithObjects:homeViewController, actualiteViewController, programationViewController, presentationViewController, nil]];
+	[(TabBarController*)self.mainController setViewControllers:[NSArray arrayWithObjects:homeViewController, programationViewController, actualiteViewController, presentationViewController, nil]];
 	
 	self.window.rootViewController = self.mainController;
     [self.window makeKeyAndVisible];

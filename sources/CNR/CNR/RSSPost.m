@@ -33,6 +33,9 @@
 	
 	[request setEntity:entity];
 	
+	// http://stackoverflow.com/a/7304350
+	[request setReturnsObjectsAsFaults:NO];
+	
 	NSError* error = nil;
 	NSMutableArray* result = [[[mcd managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
 	
